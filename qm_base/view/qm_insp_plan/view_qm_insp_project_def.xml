@@ -1,0 +1,144 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_insp_project_def" model="ir.ui.view">
+            <field name="name">qm insp project def form</field>
+            <field name="model">qm.insp_project_def</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>检验特性
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="quality_quantity_character" options="{'horizontal': true}" widget="radio"/>
+                        </group>
+                        <group colspan="4">
+                            <group name="group_left">
+                                <field name="belong_to_plant"></field>
+                                <field name="description"></field>
+                            </group>
+                            <group name="group_right">
+                                <field name="create_person"></field>
+                                <field name="create_time"></field>
+                                <field name="valid_start"></field>
+                                <field name="valid_start_date"
+                                       attrs="{'invisible':[('valid_start','=',False)]}"></field>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="特性配置">
+                                <group name="feature_setting" colspan="4">
+                                    <group name="feature_setting_left">
+                                        <field name="feature_class"></field>
+                                        <field name="importance_degree"></field>
+                                        <field name="inspection_feature"></field>
+                                        <field name="sample_plan_yn"></field>
+                                        <field name="sample_plan_id"
+                                               attrs="{'invisible':[('sample_plan_yn','=',False)]}"></field>
+                                    </group>
+                                    <group name="feature_setting_right">
+                                        <field name="insp_method_id"/>
+                                        <field name="result_record_way"/>
+                                        <field name="destructive_inspection"/>
+                                        <field name="spc_yn"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="定性值"
+                                  attrs="{'invisible':[('quality_quantity_character','!=','quality_character')]}">
+                                <group>
+                                    <group name="group_left">
+                                        <field name="defect_record_sec"></field>
+                                    </group>
+                                    <group name="group_right">
+                                        <field name="accept_depend"/>
+                                    </group>
+                                </group>
+                                <field name="insp_project_def_ids">
+                                    <tree string="Items" editable="bottom">
+                                        <field name="result_option"/>
+                                        <field name="evaluation"/>
+                                        <field name="defect_class"/>
+                                        <field name="defect_level"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="定量值"
+                                  attrs="{'invisible':[('quality_quantity_character','!=', 'quantity_character')]}">
+                                <group string="特性值类型" colspan="4">
+                                    <group name="quantity_feature_left">
+                                        <field name="check_target_value"/>
+                                        <field name="check_upper_bound"/>
+                                        <field name="check_lower_bound"/>
+                                    </group>
+                                    <group name="quantity_feature_right">
+                                        <field name="measurement_units"/>
+                                        <field name="round_precision"/>
+                                        <field name="use_standard_tolerances"/>
+                                    </group>
+                                </group>
+                                <group string="定量数据及分类定义" colspan="4">
+                                    <group name="group_left">
+                                        <field name="target_value"
+                                               attrs="{'invisible':[('check_target_value','=',False)]}"/>
+                                        <field name="lower_bound"
+                                               attrs="{'invisible':[('check_target_value','=',False)]}"/>
+                                        <field name="upper_bound"
+                                               attrs="{'invisible':[('check_target_value','=',False)]}"/>
+                                        <field name="upper_bound_values"
+                                               attrs="{'invisible':[('check_upper_bound','=',False)]}"/>
+                                        <field name="lower_bound_values"
+                                               attrs="{'invisible':[('check_lower_bound','=',False)]}"/>
+                                    </group>
+                                    <group name="group_right">
+                                        <field name="measurement_classify_ids"
+                                               attrs="{'invisible':[('check_target_value','=',False)]}">
+                                            <tree string="Items" editable="bottom">
+                                                <field name="name"/>
+                                                <field name="width"/>
+                                                <field name="mid_point"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_qm_insp_project_def" model="ir.ui.view">
+            <field name="name">qm insp project def tree</field>
+            <field name="model">qm.insp_project_def</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="belong_to_plant"></field>
+                    <field name="feature_class"></field>
+                    <field name="quality_quantity_character"></field>
+                    <field name="description"></field>
+                    <field name="importance_degree"></field>
+                    <field name="inspection_feature" string="必检?"></field>
+                    <field name="insp_method_id"></field>
+                    <field name="destructive_inspection"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_qm_defact_records" model="ir.ui.view">
+            <field name="name">qm defact records form</field>
+            <field name="model">qm.defact_records</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="result_option"></field>
+                    <field name="evaluation"></field>
+                    <field name="defect_class"></field>
+                    <field name="defect_level"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

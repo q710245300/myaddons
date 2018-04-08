@@ -1,0 +1,54 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_insp_task_quality" model="ir.ui.view">
+            <field name="name">检验工序-定性</field>
+            <field name="model">qm.insp.task.quality</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group name="group_left">
+                                <field name="project_id"/>
+                                <field name="project_type"/>
+                                <field name="importance_degree"/>
+                                <field name="depend_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="sample_count"/>
+                                <field name="ac"/>
+                                <field name="re"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="result_record_way"/>
+                                <field name="accept_depend"/>
+                                <field name="record_bill"/>
+                                <field name="d"/>
+                                <field name="defect_record"/>
+                                <field name="defect_level"/>
+                                <field name="project_accept"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_tree_qm_inspection_task_quality" model="ir.ui.view">
+            <field name="name">检验工序-定性</field>
+            <field name="model">qm.insp.task.quality</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="project_id"/>
+                    <field name="project_type"/>
+                    <field name="importance_degree"/>
+                    <field name="depend_standard"/>
+                    <field name="insp_method_id"/>
+                    <field name="sample_count"/>
+                    <field name="ac"/>
+                    <field name="re"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

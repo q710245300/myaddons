@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_form_check_task_item">
+            <field name="name">Check Task Item From</field>
+            <field name="model">qm.check_task_item</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <group name="supplier_product_list">
+                            <div class="oe_title">
+                                <h2>特性检验单
+                                    <field name="name" class="oe_inline"/>
+                                </h2>
+                            </div>
+                        </group>
+                        <group name="group_1" string="基础信息">
+                            <group name="group_left">
+                                <field name="inspection_order_id"/>
+                                <field name="sample_count"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="procedure_name"/>
+                            </group>
+                        </group>
+                        <group name="group_2">
+                            <group name="group_left">
+                                <field name="check_each_status"></field>
+                            </group>
+                            <group name="group_right">
+                                <field name="defect_counts"></field>
+                            </group>
+                        </group>
+                        <button name="create_sample_record" type="object"
+                                string="创建记录" class="oe_highlight"/>
+                        <group name="group_3" string="样本检验记录">
+                            <field name="check_task_item_ids">
+                                <tree string="Items" editable="bottom">
+                                    <field name="each_item_num"/>
+                                    <field name="each_item_result"/>
+                                    <field name="is_qulified"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--<record model="ir.actions.server" id="items_instance">-->
+        <!--<field name="name">Server Action</field>-->
+        <!--<field name="model_id" ref="qm.check_task_item"/>-->
+        <!--<field name="code">-->
+        <!--sample_count = self.sample_count-->
+        <!--lines = []-->
+        <!--for x in range(sample_count):-->
+        <!--# 循环计量值-->
+        <!--line_item = {-->
+        <!--'each_item_num': x + 1,-->
+        <!--'each_item_result': '',-->
+        <!--'is_qulified': False-->
+        <!--}-->
+        <!--lines.append(line_item)-->
+        <!--self.update({'check_task_item_ids': lines})-->
+        <!--</field>-->
+        <!--</record>-->
+
+    </data>
+</openerp>

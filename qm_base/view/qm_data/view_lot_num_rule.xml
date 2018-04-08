@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_lot_num_rule" model="ir.ui.view">
+            <field name="name">QM Lot Num Form</field>
+            <field name="model">qm.lot.num.rule</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string ="选填生成元素">
+                            <group name="group_left">
+                                <field name="product_num"/>
+                                <field name="equipment_num"/>
+                                <field name="pro_line_num"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="partner_num"/>
+                                <field name="customer_num"/>
+                                 <field name="daytime_num"/>
+                            </group>
+                        </group>
+                         <header>
+                            <button name="create_lot_num" type="object"
+                                    string="生成批次号" class="oe_highlight"/>
+                        </header>
+                          <group>
+                            <group name="group_left">
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_lot_num_rule" model="ir.ui.view">
+            <field name="name">QM Lot Num Tree</field>
+            <field name="model">qm.lot.num.rule</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
+
+

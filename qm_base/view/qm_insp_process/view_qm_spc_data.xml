@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_spc_data" model="ir.ui.view">
+            <field name="name">form view qm spc data</field>
+            <field name="model">qm.spc_data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="btn_activate" string="激活" states="create" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <button name="btn_close" string="关闭" states="activate" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="create,activate,close"
+                               readonly="1"
+                               statusbar_colors='{"cancel":"red","approve":"blue"}'></field>
+                    </header>
+                    <group name="spc_up">
+                        <group name="group_left">
+                            <field name="monitor_process_type"></field>
+                            <field name="product_id"></field>
+                            <field name="product_type"></field>
+                            <field name="inspection_series"></field>
+                            <field name="spc_yn" domain="[('spc_yn','=',True)]"></field>
+                            <field name="quality_quantity_character"></field>
+                        </group>
+                        <group name="group_right">
+                            <field name="product_line"></field>
+                            <field name="inspect_equipment"></field>
+                            <field name="work_center"></field>
+                            <field name="supplier_id"></field>
+                            <field name="customer"></field>
+                            <field name="create_date"></field>
+                        </group>
+                    </group>
+                    <separator string='控制图设置' colspan="4"></separator>
+                    <!--
+                        <separator name="analytic_account" string="Analytic Accounting" orientation="vertical" invisible="1" colspan="4"/>
+                    -->
+                    <group name="spc_bottom">
+                        <group name="control_setting_left">
+                            <field name="control_chart_type" options="{'no_create': True, 'no_open': True}"
+                                   domain="[('quality_quantity_character','=',quality_quantity_character)]"></field>
+                            <field name="control_chart_type_code" invisible="1"></field>
+                            <field name="is_constant_sub_group_size"></field>
+                            <field name="sub_group_size"
+                                   attrs="{'invisible':[('is_constant_sub_group_size','!=',True)]}"></field>
+                            <field name="target_value"
+                                   attrs="{'invisible':['|',('quality_quantity_character','!=','quantity_character')]}"></field>
+                            <field name="lower_bound_values"
+                                   attrs="{'invisible':['|',('quality_quantity_character','!=','quantity_character')]}"></field>
+                            <field name="upper_bound_values"
+                                   attrs="{'invisible':['|',('quality_quantity_character','!=','quantity_character')]}"></field>
+                            <field name="measurement_units"
+                                   attrs="{'invisible':['|',('quality_quantity_character','!=','quantity_character')]}"></field>
+                            <field name="round_precision"></field>
+                            <!--attrs="{'readonly':['|',('quality_quantity_character','==','quantity_character')]}"-->
+                            <field name="accept_depend"
+                                   attrs="{'invisible':['|',('quality_quantity_character','!=','quality_character')]}"></field>
+                        </group>
+                        <group name="control_setting_right">
+                            <field name="set_standard_value"></field>
+                            <field name="X0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['x_bar_range_chart','x_bar_standard_deviation_chart','single_value_moving_range_chart'])]}"></field>
+                            <field name="u"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['x_bar_range_chart','x_bar_standard_deviation_chart','single_value_moving_range_chart'])]}"></field>
+                            <field name="R0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['x_bar_range_chart','single_value_moving_range_chart'])]}"></field>
+                            <field name="s0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['x_bar_standard_deviation_chart'])]}"></field>
+                            <field name="sigma0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['x_bar_range_chart','x_bar_standard_deviation_chart','single_value_moving_range_chart'])]}"></field>
+                            <field name="p0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['defect_rate_p_chart','defect_number_np_chart'])]}"></field>
+                            <field name="u0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['unit_defect_number_u_chart'])]}"></field>
+                            <field name="np0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['defect_number_np_chart'])]}"></field>
+                            <field name="c0"
+                                   attrs="{'invisible':['|',('set_standard_value','=',False),('control_chart_type_code','not in',['defect_number_c_chart'])]}"></field>
+                        </group>
+                    </group>
+
+                    <button name="create_control_line" type="object"
+                            string="创建控制图" class="oe_highlight"/>
+
+                    <group string="动态生成标准值">
+                        <group name="up_contorl_limit">
+                            <field name="up_ccl"></field>
+                            <field name="up_ucl"></field>
+                            <field name="up_lcl"></field>
+                        </group>
+                        <group name="down_contorl_limit"
+                               attrs="{'invisible':['|',('quality_quantity_character','!=','quantity_character')]}">
+                            <field name="down_ccl"></field>
+                            <field name="down_ucl"></field>
+                            <field name="down_lcl"></field>
+                        </group>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_qm_spc_data" model="ir.ui.view">
+            <field name="name">tree view qm spc data</field>
+            <field name="model">qm.spc_data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="monitor_process_type"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

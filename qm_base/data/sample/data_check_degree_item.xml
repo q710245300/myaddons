@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record model="qm.check_degree_item" id="check_degree_item_01">
+          <field name="name">正常检验</field>
+            <field name="check_degree_code">normal_check</field>
+        </record>
+        <record model="qm.check_degree_item" id="check_degree_item_02">
+          <field name="name">加严检验</field>
+            <field name="check_degree_code">tighted_check</field>
+        </record>
+        <record model="qm.check_degree_item" id="check_degree_item_03">
+          <field name="name">放宽检验</field>
+            <field name="check_degree_code">reduced_check</field>
+        </record>
+    </data>
+</openerp>
+

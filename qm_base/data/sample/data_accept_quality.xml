@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+
+<!--GB_T2828_1_2012-->
+
+
+
+<!--整数一次抽样类型-->
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0017">
+            <field name="name">15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0018">
+            <field name="name">25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0019">
+            <field name="name">40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0020">
+            <field name="name">65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0021">
+            <field name="name">100</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0022">
+            <field name="name">150</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0023">
+            <field name="name">250</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0024">
+            <field name="name">400</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0025">
+            <field name="name">650</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_1_0026">
+            <field name="name">1000</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+
+
+
+<!--整数二次抽样类型-->
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0017">
+            <field name="name">15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0018">
+            <field name="name">25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0019">
+            <field name="name">40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0020">
+            <field name="name">65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0021">
+            <field name="name">100</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0022">
+            <field name="name">150</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0023">
+            <field name="name">250</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0024">
+            <field name="name">400</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0025">
+            <field name="name">650</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_2_0026">
+            <field name="name">1000</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+
+
+
+<!--整数多次次抽样类型-->
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0017">
+            <field name="name">15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0018">
+            <field name="name">25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0019">
+            <field name="name">40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0020">
+            <field name="name">65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0021">
+            <field name="name">100</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0022">
+            <field name="name">150</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0023">
+            <field name="name">250</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0024">
+            <field name="name">400</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0025">
+            <field name="name">650</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_3_0026">
+            <field name="name">1000</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+
+
+
+<!--分数固定一次抽样-->
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0017">
+            <field name="name">15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0018">
+            <field name="name">25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0019">
+            <field name="name">40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0020">
+            <field name="name">65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0021">
+            <field name="name">100</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0022">
+            <field name="name">150</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0023">
+            <field name="name">250</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0024">
+            <field name="name">400</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0025">
+            <field name="name">650</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_4_0026">
+            <field name="name">1000</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+
+
+
+<!--分数不固定一次抽样-->
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0017">
+            <field name="name">15</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0018">
+            <field name="name">25</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0019">
+            <field name="name">40</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0020">
+            <field name="name">65</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0021">
+            <field name="name">100</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0022">
+            <field name="name">150</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0023">
+            <field name="name">250</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0024">
+            <field name="name">400</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0025">
+            <field name="name">650</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T2828_1_2012_5_0026">
+            <field name="name">1000</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+
+
+
+
+<!--GB_T6378_1_2008-->
+
+
+
+<!--单侧规范限S法 -->
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_1_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+
+
+
+<!--双侧规范限S法，-->
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_2_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        
+<!--单侧规范限σ法-->
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_3_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+
+
+<!--双侧规范限σ法-->
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0001">
+            <field name="name">0.010</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0002">
+            <field name="name">0.015</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0003">
+            <field name="name">0.025</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0004">
+            <field name="name">0.040</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0005">
+            <field name="name">0.065</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0006">
+            <field name="name">0.10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0007">
+            <field name="name">0.15</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0008">
+            <field name="name">0.25</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0009">
+            <field name="name">0.40</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0010">
+            <field name="name">0.65</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0011">
+            <field name="name">1.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0012">
+            <field name="name">1.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0013">
+            <field name="name">2.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0014">
+            <field name="name">4.0</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0015">
+            <field name="name">6.5</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.accept_quality" id="GB_T6378_1_2008_4_0016">
+            <field name="name">10</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+    </data>
+</openerp>

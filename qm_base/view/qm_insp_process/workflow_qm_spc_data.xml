@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--检验模式转换确认流程-->
+        <record id="workflow_qm_spc_data" model="workflow">
+            <field name="name">SPC Data Workflow</field>
+            <field name="osv">qm.spc_data</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!--activity-->
+
+        <!--create-->
+        <record id="activity_create" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_qm_spc_data"/>
+            <field name="flow_start">True</field>
+            <field name="kind">function</field>
+            <field name="name">activate</field>
+            <field name="action">write({'state':'create'})</field>
+        </record>
+        <!--activate-->
+        <record id="activity_activate" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_qm_spc_data"/>
+            <field name="kind">function</field>
+            <field name="name">activate</field>
+            <field name="action">write({'state':'activate'})</field>
+        </record>
+        <!--close-->
+        <record id="activity_close" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_qm_spc_data"/>
+            <field name="name">close</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'close'})</field>
+        </record>
+
+        <!--transition -->
+        <record id="trans_create_activate" model="workflow.transition">
+            <field name="act_from" ref="activity_create"/>
+            <field name="act_to" ref="activity_activate"/>
+            <field name="signal">btn_activate</field>
+        </record>
+        <record id="trans_activate_close" model="workflow.transition">
+            <field name="act_from" ref="activity_activate"/>
+            <field name="act_to" ref="activity_close"/>
+            <field name="signal">btn_close</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--GB_T2828_1_2012-->
+        <!--正常转放宽-->
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_1">
+            <field name="name">当前转移得分≥30分</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_2">
+            <field name="name">连续10批被接收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_3">
+            <field name="name">生产稳定</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_4">
+            <field name="name">负责部门同意使用放宽检验</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_5">
+            <field name="name">如果AQL加严一级，这些批还能被接收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_6">
+            <field name="name">生产过程处于统计受控状态</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_7">
+            <field name="name">当执行正常检验时连续10批被允收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_8">
+            <field name="name">于执行10次的样本大小na(N)(参照5.2.1.3)检验过程中，未发现任何之不合格品</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_9">
+            <field name="name">承包商(供应者)的质量管理系统正常运作，且表现被政府机构(或顾客)认为满意</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_1_10">
+            <field name="name">政府机构(或顾客)同意减量检验</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_1"></field>
+        </record>
+        <!--放宽到正常-->
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_1">
+            <field name="name">一个批不接收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_2">
+            <field name="name">生产不稳定、生产过程中断后恢复生产</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_3">
+            <field name="name">有恢复正常检验的其他正当理由</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_4">
+            <field name="name">生产过程不稳定或被延迟</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_5">
+            <field name="name">负责部门认为不再适合执行放宽检验</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_6">
+            <field name="name">发现任何一不合格品</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_7">
+            <field name="name">生产变成不规则与延迟</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_8">
+            <field name="name">承包商(供应者)的质量管理系统是不符合要求的(或是不满意的)</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_2_9">
+            <field name="name">政府机构(或顾客)因其它情况之故，认为应回复正常检验</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_2"></field>
+        </record>
+        <!--正常转加严-->
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_3_1">
+            <field name="name">只要初次检验中连续5批或少于5批中有2批不接收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_3_2">
+            <field name="name">最近2~5批中有2批被拒收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_3"></field>
+        </record>
+        <!--加严转正常-->
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_4_1">
+            <field name="name">如果初次检验中接连5批接收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_4_2">
+            <field name="name">产生不合格品之原因已完成矫正</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_4_3">
+            <field name="name">于执行5次的样本大小na(T) (参照5.2.1.3)检验过程中，未发现任何之不合格品</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_4_4">
+            <field name="name">产生不合格品之原因已完成矫正</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_4"></field>
+        </record>
+        <!--加严转暂停-->
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_5_1">
+            <field name="name">由于发现不符合，计数值与计量值抽样计划如果各送验批抽样检验一直维持在加严检验的水平</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_5_2">
+            <field name="name">由于发现不符合，当连续抽样计划实施过程中，长时期处在筛选阶段</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_5_3">
+            <field name="name">负责部门同意暂停验收</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_5"></field>
+        </record>
+
+         <!--加严转暂停-->
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_6_1">
+            <field name="name">供方为改进所提供产品或服务的质量已采取行动，且负责部门认为此行动可能有效</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_6"></field>
+        </record>
+        <record model="qm.trans.level.condition" id="CONDITION_GB_T2828_1_2012_6_2">
+            <field name="name">负责部门同意恢复加严检验</field>
+            <field name="trans_level_type_id" ref="TYPE_GB_T2828_1_2012_6"></field>
+        </record>
+
+
+    </data>
+</openerp>
+

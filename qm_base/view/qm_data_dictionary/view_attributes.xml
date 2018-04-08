@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_attributes" model="ir.ui.view">
+            <field name="name">QM Attributes Form</field>
+            <field name="model">qm.attributes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>特征属性
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="type"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                        <group string="特征值定义"></group>
+                        <field name="values_list" widget="one2many_list">
+                            <tree>
+                                <field name="name"/>
+                                <field name="assess"/>
+                                <field name="defects"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_attributes" model="ir.ui.view">
+            <field name="name">QM Attributes Tree</field>
+            <field name="model">qm.attributes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
+

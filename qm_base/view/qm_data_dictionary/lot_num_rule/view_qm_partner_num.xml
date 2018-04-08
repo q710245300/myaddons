@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_partner_num" model="ir.ui.view">
+            <field name="name">QM Partner Num Form</field>
+            <field name="model">qm.partner.num</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="请选择">
+                            <group name="group_left">
+                                <field name="belong_partner"/>
+                                <field name="partner_num"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="belong_city"/>
+                            </group>
+                        </group>
+                        <header>
+                            <button name="create_partner_code" type="object"
+                                    string="生成供应商编码" class="oe_highlight"/>
+                        </header>
+                        <group string="">
+                            <group name="group_left">
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_partner_num" model="ir.ui.view">
+            <field name="name">QM Partner Num Tree</field>
+            <field name="model">qm.partner.num</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

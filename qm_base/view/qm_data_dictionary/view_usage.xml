@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_usage" model="ir.ui.view">
+            <field name="name">QM Usage Form</field>
+            <field name="model">qm.usage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>方法名称
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="use_center"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                        <group name="bottom">
+                            <field name="describe"></field>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 定义列表视图 -->
+         <record id="view_tree_qm_usage" model="ir.ui.view">
+            <field name="name">QM Usage Tree</field>
+            <field name="model">qm.usage</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
+

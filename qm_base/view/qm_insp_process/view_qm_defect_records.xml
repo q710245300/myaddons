@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="view_tree_qm_defect_record" model="ir.ui.view">
+            <field name="name">tree view qm defect record</field>
+            <field name="model">qm.defect.record</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="insp_order"/>
+                    <field name="product_id"/>
+                    <field name="lot_num"/>
+                    <field name="test_lot"/>
+                    <field name="fectory"/>
+                    <field name="origin"/>
+                    <field name="test_process"/>
+                    <field name="test_project"/>
+                    <field name="defect_type"/>
+                    <field name="defect_count"/>
+                    <field name="defect_leval"/>
+                    <field name="defect_position"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_qm_defect_record" model="ir.ui.view">
+            <field name="name">search view for qm defect record</field>
+            <field name="model">qm.defect.record</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field	name="defect_record_leval"/><!--缺陷记录水平-->
+                    <field name="defect_leval"/><!--缺陷等级-->
+                    <field name="test_project"/><!--检验项目-->
+                    <field name="test_process"/><!--检验工序-->
+                    <field name="insp_order"/><!--检验单-->
+                    <group expand="0" string="Group By">
+                        <filter string="检验单" domain="[]" context="{'group_by':'insp_order'}"/>
+                        <filter string="检验工序" domain="[]" context="{'group_by':'test_process'}"/>
+                        <filter string="检验项目" domain="[]" context="{'group_by':'test_project'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="send_defect_notice" model="ir.actions.act_window">
+            <field name="context">{'origin':'defect'}</field>
+            <field name="domain">[]</field>
+            <field name="name">质量通知</field>
+            <field name="res_model">qm.notice</field>
+            <field name="view_id" ref="view_form_qm_notice"/>
+        </record>
+        <record id="view_form_qm_defect_records" model="ir.ui.view">
+            <field name="name">form view qm defect records</field>
+            <field name="model">qm.defect.records</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>缺陷记录
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="product_id"/>
+                                <field name="test_lot"/>
+                                <field name="lot_num"/>
+                                <field name="origin"/>
+                                <field name="partner"/>
+                                <field name="defect_desc"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="defect_record_type" invisible="1"/>
+                                <field name="fectory"/>
+                                <field name="test_process"/>
+                                <field name="test_project"/>
+                                <field name="product_owner"/>
+                                <field name="test_owner"/>
+                                <field name="defect_record_type"/>
+                            </group>
+                        </group>
+                        <group string="缺陷记录">
+                            <field name="defect_record_ids1" widget="one2many_list" attrs="{'invisible':[('defect_record_type','!=','defect')]}"><!-- context="{'group_by': 'defect_type'}"-->
+                                <tree editable="bottom" context="{'group_by': 'defect_type'}">
+                                    <field name="defect_type"/>
+                                    <field name="defect_count"/>
+                                    <field name="defect_position"/>
+                                    <field name="defect_leval"/>
+                                    <field name="unqualified_review_application"/>
+                                    <field name="notice_state" invisible="1"/>
+                                </tree>
+                            </field>
+                            <field name="defect_record_ids2" widget="one2many_list" attrs="{'invisible':[('defect_record_type','!=','product_num')]}" >
+                                <tree editable="bottom">
+                                    <field name="defect_product_num"/>
+                                    <field name="defect_type"/>
+                                    <field name="defect_count"/>
+                                    <field name="defect_position"/>
+                                    <field name="defect_leval"/>
+                                    <field name="unqualified_review_application"/>
+                                    <field name="notice_state" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="tigger_work_flow"/>
+                                <label for="qm_notice_type"/>
+                                <div>
+                                    <field name="qm_notice_type" class="oe_inline"/>
+                                    <button name="send_defect_notice" string="发送" type="object" icon="fa-envelope" colspan="1" class="oe_edit_only"
+                                            context="{'defect_record_type':defect_record_type,'record_id':active_id}"/>
+                                </div>
+                            </group>
+                            <group>
+
+                                <field name="record_persion"/>
+                                <field name="record_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

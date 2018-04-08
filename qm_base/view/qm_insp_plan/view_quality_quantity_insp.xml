@@ -1,0 +1,103 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+
+        <!--
+            form 视图
+        -->
+        <record id="view_form_foton_daimer_qm_quality_quantity_insp" model="ir.ui.view">
+            <field name="name">定量/定性检测</field>
+            <field name="model">qm.quality_quantity_insp</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <!--
+                     <header>
+                        如果按钮的 type 还是设置为object，那么其是不发送工作流的 signal 的。
+
+                    </header>
+                    -->
+                    <sheet>
+                        <group>
+                            <field name="inspection_plan_type"></field>
+                        </group>
+                        <group>
+                            <field name="insp_project_def_id"></field>
+                            <field name="importance_degree"></field>
+                            <field name="depend_standard"></field>
+                            <field name="quality_standard"></field>
+                            <field name="insp_method_id"></field>
+                            <field name="test_equipment"></field>
+                            <field name="defect_mode"></field>
+                            <field name="dynamic_modify_rule"></field>
+                            <field name="insp_result"></field>
+                            <field name="sample_plan_id"></field>
+                            <field name="inspection_feature"></field>
+                            <field name="destructive_inspection"></field>
+                            <field name="inspection_site"></field>
+                            <field name="key_part_nun"></field>
+                            <field name="target_value"></field>
+                            <field name="lower_bound"></field>
+                            <field name="upper_bound"></field>
+                            <field name="measurement_units"></field>
+                            <field name="inspection_points"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--
+            tree 视图
+        -->
+        <record id="view_tree_foton_daimer_qm_quality_quantity_insp" model="ir.ui.view">
+            <field name="name">定量/定性检测</field>
+            <field name="model">qm.quality_quantity_insp</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="insp_project_def_id"></field>
+                    <field name="importance_degree"></field>
+                    <field name="depend_standard"></field>
+                    <field name="quality_standard"></field>
+                    <field name="insp_method_id"></field>
+                    <field name="test_equipment"></field>
+                    <field name="defect_mode"></field>
+                    <field name="dynamic_modify_rule"></field>
+                    <field name="insp_result"></field>
+                    <field name="sample_plan_id"></field>
+                    <field name="inspection_feature"></field>
+                    <field name="destructive_inspection"></field>
+                    <field name="inspection_site"></field>
+                    <field name="key_part_nun"></field>
+                    <field name="target_value"></field>
+                    <field name="lower_bound"></field>
+                    <field name="upper_bound"></field>
+                    <field name="measurement_units"></field>
+                    <field name="inspection_points"></field>
+                </tree>
+            </field>
+        </record>
+        <!--
+            search 视图
+
+        <record id="" model="ir.ui.view">
+            <field name="name"></field>
+            <field name="model"></field>
+            <field name="arch"type="xml">
+                <search>
+                    <field name=""> </field>
+                    <filter string=""   domain="[()]"></filter>
+
+                </search>
+            </field>
+        </record>
+        -->
+        <!--2016年5月13日 16:42:22 added by zhangningbo
+        <record id="action_concession_bill" model="ir.actions.act_window">
+            <field name="name">Quality Improve Bill</field>
+            <field name="res_model">qm.concession.reception.bill</field>
+            <field name="context">{}</field>
+            <field name="view_id" ref="view_tree_qm_concession_reception_bill"/>
+        </record>
+        -->
+    </data>
+</openerp>

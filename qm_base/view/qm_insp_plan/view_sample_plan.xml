@@ -1,0 +1,160 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_sample_plan" model="ir.ui.view">
+            <field name="name">qm sample plan form</field>
+            <field name="model">qm.sample_plan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>抽样方案
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="sampling_standard"  ></field>
+                        </group>
+                        <group>
+                            <group attrs="{'invisible':[('sampling_standard','not in',['use_sample_scheme'])]}">
+                                <field name="gb_standard_id" options="{'no_create': True, 'no_open': True}" ></field>
+                                <field name="gb_standard_name" invisible="1"></field>
+                                <field name="sample_check_type_id"  options="{'no_create': True, 'no_open': True}"
+                                       domain="[('gb_standard_id','=',gb_standard_id)]"></field>
+                                 <field name="sample_type_code" invisible="1"></field>
+                                <field name="check_level_id"  options="{'no_create': True, 'no_open': True}"
+                                       domain="[('sample_check_type_id','=',sample_check_type_id)]"></field>
+                                <field name="check_degree_id"  options="{'no_create': True, 'no_open': True}"
+                                       domain="[('sample_check_type_id','=',sample_check_type_id)]"></field>
+                                <field name="aql_id"  options="{'no_create': True, 'no_open': True}"
+                                       domain="[('sample_check_type_id','=',sample_check_type_id)]"></field>
+
+                            </group>
+                            <group>
+                                <field name="fixed_sample_num"
+                                       attrs="{'invisible':[('sampling_standard','not in',['fixed_sample'])]}"></field>
+                                <field name="sample_percentage"
+                                       attrs="{'invisible':[('sampling_standard','not in',['percentage_inspection'])]}"></field>
+                                <field name="evaluation_mode"></field>
+                                <field name="only_attr_check"></field>
+                                <field name="creater"></field>
+                                <field name="create_time"></field>
+                            </group>
+                        </group>
+                        <header attrs="{'invisible':[('sampling_standard','not in',['use_sample_scheme'])]}">
+
+                            <button name="create_sample_table" type="object"
+                                    string="查询采样方案表" class="oe_highlight"/>
+                        </header>
+                        <field name="sample_plan_ids"  options="{'no_open': True,'no_create': True }"  attrs="{'invisible':['|',('sampling_standard','not in',['use_sample_scheme']),('sample_type_code','not in',['Integer_one_sample','Fraction_one_sample_unfixed','Fraction_one_sample_unfixed'])]}" >
+                            <tree >
+                                <field name="lot_size"/>
+                                <field name="sample_code"></field>
+                                <field name="normal_sample_size"/>
+                                <field name="normal_ac"/>
+                                <field name="normal_re"/>
+                                <field name="tightened_sample_size"/>
+                                <field name="tightened_ac"/>
+                                <field name="tightened_re"/>
+                                <field name="reduced_sample_size"/>
+                                <field name="reduced_ac"/>
+                                <field name="reduced_re"/>
+                            </tree>
+                        </field>
+
+                         <field name="sample_plan_ids_sec"  options="{'no_open': True,'no_create': True }"  attrs="{'invisible':['|',('sampling_standard','not in',['use_sample_scheme']),('sample_type_code','not in',['Integer_two_sample','Integer_many_sample'])]}">
+                            <tree >
+                                <field name="lot_size"/>
+                                <field name="sample_code"></field>
+                                <field name="sample_time"></field>
+                                <field name="normal_sample_size"/>
+                                <field name="normal_cumulative_sample_size"></field>
+                                <field name="normal_ac"/>
+                                <field name="normal_re"/>
+                                <field name="tightened_sample_size"/>
+                                <field name="tighted_cumulative_sample_size"></field>
+                                <field name="tightened_ac"/>
+                                <field name="tightened_re"/>
+                                <field name="reduced_sample_size"/>
+                                <field name="reduced_cumulative_sample_size"></field>
+                                <field name="reduced_ac"/>
+                                <field name="reduced_re"/>
+                            </tree>
+                        </field>
+
+                            <field name="measurement_table_one_ids"  options="{'no_open': True,'no_create': True }"  attrs="{'invisible':['|',('sampling_standard','not in',['use_sample_scheme']),'|',('gb_standard_name','not in',['GB/T6378.1-2008']),('sample_type_code','not in',['one_side_s_method','one_side_sigma_method'])]}">
+                            <tree >
+                                <field name="lot_size"/>
+                                <field name="normal_sample_size"/>
+                                <field name="normal_k"/>
+                                <field name="tightened_sample_size"/>
+                                <field name="tightened_k"/>
+                                <field name="reduced_sample_size"/>
+                                <field name="reduced_k"/>
+                            </tree>
+                        </field>
+
+                        <field name="measurement_table_two_ids"  options="{'no_open': True,'no_create': True }"  attrs="{'invisible':['|',('sampling_standard','not in',['use_sample_scheme']),'|',('gb_standard_name','not in',['GB/T6378.1-2008']),('sample_type_code','not in',['both_side_s_method'])]}">
+                            <tree >
+                                <field name="lot_size"/>
+                                <field name="normal_sample_size"/>
+                                <field name="normal_fs"/>
+                                <field name="tightened_sample_size"/>
+                                <field name="tightened_fs"/>
+                                <field name="reduced_sample_size"/>
+                                <field name="reduced_fs"/>
+                            </tree>
+                        </field>
+
+                        <field name="measurement_table_three_ids"  options="{'no_open': True,'no_create': True }"  attrs="{'invisible':['|',('sampling_standard','not in',['use_sample_scheme']),'|',('gb_standard_name','not in',['GB/T6378.1-2008']),('sample_type_code','not in',['both_side_sigma_method'])]}">
+                            <tree >
+                                <field name="lot_size"/>
+                                <field name="normal_sample_size"/>
+                                <field name="normal_k"/>
+                                <field name="normal_f_sigma"/>
+                                <field name="tightened_sample_size"/>
+                                <field name="tightened_k"/>
+                                <field name="tightened_f_sigma"/>
+                                <field name="reduced_sample_size"/>
+                                <field name="reduced_k"/>
+                                <field name="reduced_f_sigma"/>
+                            </tree>
+                        </field>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--
+            tree 视图
+        -->
+        <record id="view_tree_qm_sample_plan" model="ir.ui.view">
+            <field name="name">qm sample plan tree</field>
+            <field name="model">qm.sample_plan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="sampling_standard"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="view_tree_qm_sample_table" model="ir.ui.view">
+            <field name="name">qm sample table tree</field>
+            <field name="model">qm.sample_table</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="lot_size"/>
+                    <field name="normal_sample_size"/>
+                    <field name="normal_ac"/>
+                    <field name="normal_re"/>
+                    <field name="tightened_sample_size"/>
+                    <field name="tightened_ac"/>
+                    <field name="tightened_re"/>
+                    <field name="reduced_sample_size"/>
+                    <field name="reduced_ac"/>
+                    <field name="reduced_re"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

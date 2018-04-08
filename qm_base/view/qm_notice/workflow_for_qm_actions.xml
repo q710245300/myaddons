@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--问题与行动-->
+        <record id="workflow_for_qm_action" model="workflow">
+            <field name="name">WorkFlow for qm action</field>
+            <field name="osv">qm.actions</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!--活动状态-->
+
+        <!--草稿-->
+        <record id="act_draft_action" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_action"/>
+            <field name="flow_start">True</field>
+            <field name="name">draft_action</field>
+        </record>
+        <!--准备进行-->
+        <record id="act_plan_to" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_action"/>
+            <field name="name">plan_to_action</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'plan_to_action'})</field>
+        </record>
+        <!--进行中-->
+        <record id="act_playing_action" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_action"/>
+            <field name="name">playing_action</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'playing_action'})</field>
+        </record>
+        <!--完成-->
+        <record id="act_done_action" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_action"/>
+            <field name="name">done_action</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'done_action'})</field>
+        </record>
+        <!--成功
+        <record id="act_success" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_action"/>
+            <field name="name">success</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'success'})</field>
+        </record>-->
+        <!--取消-->
+        <record id="act_action_cancel" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_action"/>
+            <field name="name">action_cancel</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'action_cancel'})</field>
+        </record>
+
+        <!--活动迁移  -->
+        <record id="trans_action_draft_to_plan" model="workflow.transition">
+            <field name="act_from" ref="act_draft_action"/>
+            <field name="act_to" ref="act_plan_to"/>
+            <field name="signal">btn_plan_action</field>
+        </record>
+        <record id="trans_action_plan_to_playing" model="workflow.transition">
+            <field name="act_from" ref="act_plan_to"/>
+            <field name="act_to" ref="act_playing_action"/>
+            <field name="signal">btn_playing_action</field>
+        </record>
+        <record id="trans_action_playing_to_done" model="workflow.transition">
+            <field name="act_from" ref="act_playing_action"/>
+            <field name="act_to" ref="act_done_action"/>
+            <field name="signal">btn_done_action</field>
+        </record>
+        <!--成功状态由质量通知的实效评审确认-->
+        <!--<record id="trans_action_done_to_success" model="workflow.transition">
+            <field name="act_from" ref="act_done_action"/>
+            <field name="act_to" ref="act_success"/>
+            <field name="signal">btn_success</field>
+        </record>-->
+
+        <!--取消-->
+        <record id="trans_action_draft_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_draft_action"/>
+            <field name="act_to" ref="act_action_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+        <record id="trans_action_playing_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_playing_action"/>
+            <field name="act_to" ref="act_action_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+        <record id="trans_action_done_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_done_action"/>
+            <field name="act_to" ref="act_action_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,165 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_work_procedure" model="ir.ui.view">
+            <field name="name">qm work procedure form</field>
+            <field name="model">qm.work_procedure</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>工序 ：
+                                <field name="name" class="oe_inline"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <field name="insp_plan_type"></field>
+                        </group>
+                        <group>
+                            <group name="work_procedure_left">
+                                <field name="work_num"></field>
+                                <field name="quality_standard"></field>
+                                <field name="work_center"></field>
+                                   <field name="work_content_desc"></field>
+                            </group>
+
+                            <group name="work_procedure_right">
+                                <field name="work_procedure_type"
+                                       attrs="{'invisible':[('insp_plan_type','!=','making_product_insp')]}"></field>
+                                <field name="inspection_mode"
+                                       attrs="{'invisible':[('insp_plan_type','!=','making_product_insp')]}"></field>
+                                <field name="hour_count"></field>
+                                <field name="check_group"></field>
+                                <field name="resposible_person"></field>
+                            </group>
+                        </group>
+                        <group string="定性检验项目" attrs="{'invisible':[('insp_plan_type','=',False)]}"></group>
+                        <field name="work_procedure_quality_ids_one" context="{'insp_plan_type': insp_plan_type}"
+                               attrs="{'invisible':[('insp_plan_type','!=','import_material_insp')]}">
+                            <tree string="Items" editable="bottom">
+                                <field name="insp_project_def_id"
+                                       domain="[('quality_quantity_character', '=','quality_character')]"/>
+                                <field name="importance_degree"/>
+                                <field name="depend_standard"></field>
+                                <field name="insp_method_id"/>
+                                <field name="test_equipment"/>
+                                <field name="result_choice"/>
+                                <field name="defect_mode"/>
+                                <field name="sample_plan_id"/>
+                                <field name="dynamic_modify_rule"/>
+                                <field name="inspection_feature"/>
+                                <field name="destructive_inspection"/>
+                            </tree>
+                        </field>
+                        <field name="work_procedure_quality_ids_two" context="{'insp_plan_type': insp_plan_type}"
+                               attrs="{'invisible':[('insp_plan_type','not in',['making_product_insp','making_procedure_insp'])]}">
+                            <tree string="Items" editable="bottom">
+                                <field name="insp_project_def_id"
+                                       domain="[('quality_quantity_character', '=','quality_character')]"/>
+                                <field name="importance_degree"/>
+                                <field name="quality_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="test_equipment"/>
+                                <field name="defect_mode"/>
+                                <field name="insp_result"></field>
+                                <field name="sample_plan_id"/>
+                                <field name="inspection_feature"/>
+                            </tree>
+                        </field>
+                        <field name="work_procedure_quality_ids_three"
+                               context="{'insp_plan_type': insp_plan_type}"
+                               attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}">
+                            <tree string="Items" editable="bottom">
+                                <field name="insp_project_def_id"
+                                       domain="[('quality_quantity_character', '=','quality_character')]"/>
+                                <field name="importance_degree"/>
+                                <field name="quality_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="defect_mode"/>
+                                <field name="insp_result"></field>
+                                <field name="sample_plan_id"/>
+                                <field name="inspection_feature"/>
+                            </tree>
+                        </field>
+                        <group string="定量检验项目" attrs="{'invisible':[('insp_plan_type','=',False)]}"></group>
+                        <field name="work_procedure_quantity_ids_one" context="{'insp_plan_type': insp_plan_type}"
+                               attrs="{'invisible':[('insp_plan_type','!=','import_material_insp')]}">
+                            <tree string="Items" editable="bottom">
+                                <field name="insp_project_def_id"
+                                       domain="[('quality_quantity_character', '=','quantity_character')]"/>
+                                <field name="importance_degree"/>
+                                <field name="depend_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="test_equipment"/>
+                                <field name="target_value"/>
+                                <field name="lower_bound"/>
+                                <field name="upper_bound"/>
+                                <field name="measurement_units"/>
+                                <field name="inspection_points"/>
+                                <field name="sample_plan_id"/>
+                                <field name="dynamic_modify_rule"/>
+                                <field name="inspection_feature"/>
+                                <field name="destructive_inspection"/>
+                            </tree>
+                        </field>
+                        <field name="work_procedure_quantity_ids_two" context="{'insp_plan_type': insp_plan_type}"
+                               attrs="{'invisible':[('insp_plan_type','not in',['making_product_insp','making_procedure_insp'])]}">
+                            <tree string="Items" editable="bottom">
+                                <field name="insp_project_def_id"
+                                       domain="[('quality_quantity_character', '=','quantity_character')]"/>
+                                <field name="importance_degree"/>
+                                <field name="inspection_site"/>
+                                <field name="key_part_nun"/>
+                                <field name="quality_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="test_equipment"/>
+                                <field name="target_value"/>
+                                <field name="lower_bound"/>
+                                <field name="upper_bound"/>
+                                <field name="measurement_units"/>
+                                <field name="inspection_points"/>
+                                <field name="sample_plan_id"/>
+                                <field name="inspection_feature"/>
+                            </tree>
+                        </field>
+                        <field name="work_procedure_quantity_ids_three"
+                               context="{'insp_plan_type': insp_plan_type}"
+                               attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}">
+                            <tree string="Items" editable="bottom">
+                                <field name="insp_project_def_id"
+                                       domain="[('quality_quantity_character', '=','quantity_character')]"/>
+                                <field name="importance_degree"/>
+                                <field name="inspection_site"/>
+                                <field name="quality_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="target_value"/>
+                                <field name="lower_bound"/>
+                                <field name="upper_bound"/>
+                                <field name="measurement_units"/>
+                                <field name="inspection_points"/>
+                                <field name="sample_plan_id"/>
+                                <field name="inspection_feature"/>
+                            </tree>
+                        </field>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_qm_work_procedure" model="ir.ui.view">
+            <field name="name">qm work procedure tree</field>
+            <field name="model">qm.work_procedure</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="work_num"></field>
+                    <field name="name"></field>
+                    <field name="work_center"></field>
+                    <field name="work_content_desc"></field>
+                    <field name="inspection_mode"></field>
+                    <field name="hour_count"></field>
+                    <field name="resposible_person"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

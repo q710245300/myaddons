@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_station_factory" model="ir.ui.view">
+            <field name="name">QM Staton Factory Form</field>
+            <field name="model">station.factory</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group name="group_left">
+                                <field name="name"/>
+
+                            </group>
+                            <group name="group_right">
+                                <field name="num"/>
+                            </group>
+                        </group>
+                        <group string="生产线">
+                            <field name="product_line_ids" >
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="num"/>
+                                </tree>
+                            </field>
+                        </group>
+                         <group string="检验点">
+                            <field name="check_point_ids" >
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="num"/>
+                                </tree>
+                            </field>
+                        </group>
+                         <group string="库位">
+                            <field name="location_ids" >
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="num"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_station_factory" model="ir.ui.view">
+            <field name="name">QM Staton Factory Tree</field>
+            <field name="model">station.factory</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="num"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
+
+

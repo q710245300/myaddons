@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--质量通知-->
+        <record id="workflow_for_qm_notice" model="workflow">
+            <field name="name">WorkFlow for qm notice</field>
+            <field name="osv">qm.notice</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!--活动状态-->
+
+        <!--草稿-->
+        <record id="act_notice_draft" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_notice"/>
+            <field name="flow_start">True</field>
+            <field name="name">draft_notice</field>
+        </record>
+        <!--分析-->
+        <record id="act_defect_analysis" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_notice"/>
+            <field name="name">analysis_notice</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'analysis_notice'})</field>
+        </record>
+        <!--等待审批-->
+        <record id="act_wait" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_notice"/>
+            <field name="name">wait_notice</field>
+            <field name="kind">function</field>
+            <field name="action">action_review()</field><!--write({'state':'wait_notice'})-->
+        </record>
+        <!--进行中-->
+        <record id="act_playing_notice" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_notice"/>
+            <field name="name">playing_notice</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'playing_notice'})</field>
+        </record>
+        <!--完成-->
+        <record id="act_notice_done" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_notice"/>
+            <field name="name">done_notice</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'done_notice'})</field>
+        </record>
+        <!--取消-->
+        <record id="act_notice_cancel" model="workflow.activity">
+            <field name="wkf_id" ref="workflow_for_qm_notice"/>
+            <field name="name">notice_cancel</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'notice_cancel'})</field>
+        </record>
+
+        <!--活动迁移  -->
+        <record id="trans_notice_draft_to_analysis" model="workflow.transition">
+            <field name="act_from" ref="act_notice_draft"/>
+            <field name="act_to" ref="act_defect_analysis"/>
+            <field name="signal">btn_notice_analysis</field>
+        </record>
+        <record id="trans_defect_analysis_to_wait" model="workflow.transition">
+            <field name="act_from" ref="act_defect_analysis"/>
+            <field name="act_to" ref="act_wait"/>
+            <field name="signal">btn_notice_wait</field>
+        </record>
+        <record id="trans_wait_to_playing" model="workflow.transition">
+            <field name="act_from" ref="act_wait"/>
+            <field name="act_to" ref="act_playing_notice"/>
+            <field name="signal">btn_notice_playing</field>
+        </record>
+        <record id="trans_playing_notice_to_done" model="workflow.transition">
+            <field name="act_from" ref="act_playing_notice"/>
+            <field name="act_to" ref="act_notice_done"/>
+            <field name="signal">btn_notice_done</field>
+        </record>
+
+        <!--取消-->
+        <record id="trans_draft_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_notice_draft"/>
+            <field name="act_to" ref="act_notice_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+        <record id="trans_analysis_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_defect_analysis"/>
+            <field name="act_to" ref="act_notice_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+        <record id="trans_wait_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_wait"/>
+            <field name="act_to" ref="act_notice_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+        <record id="trans_playing_to_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_playing_notice"/>
+            <field name="act_to" ref="act_notice_cancel"/>
+            <field name="signal">btn_Cancel</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,85 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+
+        <!--
+            form 视图
+        -->
+        <record id="view_form_qm_sample_process" model="ir.ui.view">
+            <field name="name">qm sample process form</field>
+            <field name="model">qm.sample_process</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--
+                     <header>
+                        如果按钮的 type 还是设置为object，那么其是不发送工作流的 signal 的。
+
+                    </headerad>
+                    -->
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>采样过程：
+                                <field name="name" class="oe_inline"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="sample_type"></field>
+                                <field name="evaluation_mode"></field>
+                            </group>
+                            <group name="group_right">
+                                <field name="sample_quantity"></field>
+                                <field name="sample_plan_id"></field>
+                                <field name="sample_percentage"></field>
+                                <field name="creater"></field>
+                                <field name="create_time"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--
+            tree 视图
+        -->
+        <record id="view_tree_qm_sample_process" model="ir.ui.view">
+            <field name="name">qm sample process tree</field>
+            <field name="model">qm.sample_process</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="sample_type"></field>
+                    <field name="evaluation_mode"></field>
+                    <field name="sample_quantity"></field>
+                    <field name="sample_plan_id"></field>
+                    <field name="sample_percentage"></field>
+                    <field name="creater"></field>
+                    <field name="create_time"></field>
+                </tree>
+            </field>
+        </record>
+        <!--
+            search 视图
+
+        <record id="" model="ir.ui.view">
+            <field name="name"></field>
+            <field name="model"></field>
+            <field name="arch"type="xml">
+                <search>
+                    <field name=""> </field>
+                    <filter string=""   domain="[()]"></filter>
+
+                </search>
+            </field>
+        </record>
+        -->
+        <!--2016年5月13日 16:42:22 added by zhangningbo
+        <record id="action_concession_bill" model="ir.actions.act_window">
+            <field name="name">Quality Improve Bill</field>
+            <field name="res_model">qm.concession.reception.bill</field>
+            <field name="context">{}</field>
+            <field name="view_id" ref="view_tree_qm_concession_reception_bill"/>
+        </record>
+        -->
+    </data>
+</openerp>

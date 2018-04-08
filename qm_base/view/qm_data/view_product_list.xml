@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+
+        <record model="ir.ui.view" id="view_form_product_list_1">
+            <field name="name">Prodcut List From</field>
+            <field name="model">qm.product.list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="product_list" string="选择/创建产品">
+                            <div class="oe_title">
+                                <h2>产品名称
+                                    <field name="product_name" class="oe_inline"/>
+                                </h2>
+                            </div>
+                        </group>
+                        <group name="product_list_info" string="产品信息">
+                            <group name="group_left">
+                                <field name="product_num"/>
+                                <field name="test_mode"/>
+                                 <field name="ac_score"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="importance_category"/>
+                                <field name="trans_score"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

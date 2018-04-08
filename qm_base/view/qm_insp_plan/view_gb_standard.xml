@@ -1,0 +1,226 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+
+        <!--
+            1. 标准
+               form 视图
+        -->
+        <record id="view_form_qm_gb_standard" model="ir.ui.view">
+            <field name="name">qm gb standard form</field>
+            <field name="model">qm.gb_standard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--
+                    <header>
+                        <button name="compute_check_level_value" type="object"
+                                string="返回结果" class="oe_highlight"/>
+                    </header>
+                    -->
+                    <div class="oe_title">
+                        <h1>标准：
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="gb_standard_ids" widget="one2many_list">
+                            <tree string="Items">
+                                <field name="name"></field>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--
+            tree 视图
+        -->
+        <record id="view_tree_qm_gb_standard" model="ir.ui.view">
+            <field name="name">qm gb standard tree</field>
+            <field name="model">qm.gb_standard</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="gb_standard_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--
+            2. 抽样检验类型
+                form 视图
+        -->
+        <record id="view_form_qm_sample_check_type" model="ir.ui.view">
+            <field name="name">qm sample check type form</field>
+            <field name="model">qm.sample_check_type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--
+                    <header>
+                        <button name="compute_check_level_value" type="object"
+                                string="返回结果" class="oe_highlight"/>
+                    </header>
+                    -->
+                    <div class="oe_title">
+                        <h1>采样类型:
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="sample_type_code"></field>
+                    </group>
+                    <group string="检验水平" >
+                        <field name="sample_check_type_ids_first" widget="one2many_list">
+                            <tree string="Items" editable="bottom">
+                                <field name="name"></field>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="检验严格性" >
+                        <field name="sample_check_type_ids_second" widget="one2many_list">
+                            <tree string="Items" editable="bottom">
+                                <field name="name"></field>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="aql值">
+                        <field name="sample_check_type_ids_third" widget="one2many_list">
+                            <tree string="Items" editable="bottom">
+                                <field name="name"></field>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--
+                tree 视图
+        -->
+        <record id="view_tree_qm_sample_check_type" model="ir.ui.view">
+            <field name="name">qm sample check type tree</field>
+            <field name="model">qm.sample_check_type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!--
+            3. 检验水平
+                form 视图
+        -->
+        <record id="view_form_qm_check_level" model="ir.ui.view">
+            <field name="name">qm check level form</field>
+            <field name="model">qm.check_level</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_title">
+                        <h3>检验水平
+                            <field name="name" class="oe_inline"/>
+                        </h3>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--
+                tree 视图
+        -->
+        <record id="view_tree_qm_check_level" model="ir.ui.view">
+            <field name="name">qm check level tree</field>
+            <field name="model">qm.check_level</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!--
+            4. 检验严格度
+                form 视图
+        -->
+        <record id="view_form_qm_check_degree" model="ir.ui.view">
+            <field name="name">qm check degree form</field>
+            <field name="model">qm.check_degree</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_title">
+                        <h1>检验严格度
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--
+                tree 视图
+        -->
+
+
+
+        <!--
+             5. 检验严格度条目
+                form 视图
+        -->
+        <record id="view_form_qm_check_degree_item" model="ir.ui.view">
+            <field name="name">qm check degree item form</field>
+            <field name="model">qm.check_degree_item</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_title">
+                        <h1>检验严格度
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="check_degree_code"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!--
+                tree 视图
+        -->
+
+        <record id="view_tree_qm_check_degree" model="ir.ui.view">
+            <field name="name">qm check degree tree</field>
+            <field name="model">qm.check_degree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!--
+            5. aql值
+                form 视图
+        -->
+        <record id="view_form_qm_accept_quality" model="ir.ui.view">
+            <field name="name">qm accept quality form</field>
+            <field name="model">qm.accept_quality</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_title">
+                        <h3> aql 值：
+                            <field name="name" class="oe_inline"/>
+                        </h3>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--
+                tree 视图
+        -->
+        <record id="view_tree_qm_accept_quality" model="ir.ui.view">
+            <field name="name">qm accept quality</field>
+            <field name="model">qm.accept_quality</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

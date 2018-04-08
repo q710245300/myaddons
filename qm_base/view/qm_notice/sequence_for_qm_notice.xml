@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+     <data noupdate="1">
+         <record id="sequence_qm_notice" model="ir.sequence">
+             <field name="name">qm notice</field>
+             <field name="code">qm.notice</field>
+             <field name="prefix">QM.N. </field>
+             <field name="padding">6</field>
+             <field name="number_next">1</field>
+             <field name="number_increment">1</field>
+         </record>
+         <record id="sequence_qm_actions" model="ir.sequence">
+             <field name="name">qm action</field>
+             <field name="code">qm.actions</field>
+             <field name="prefix">No.</field>
+             <field name="padding">4</field>
+             <field name="number_next">1</field>
+             <field name="number_increment">1</field>
+         </record>
+     </data>
+</openerp>

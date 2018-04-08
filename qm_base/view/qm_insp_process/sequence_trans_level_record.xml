@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+     <data noupdate="1">
+        <record id="sequence_qm_trans" model="ir.sequence">
+            <field name="name">qm trans</field>
+            <field name="code">qm.trans.check.degree.name</field>
+            <field name="prefix">TCD-</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+         <record id="sequence_qm_defect_records" model="ir.sequence">
+             <field name="name">qm defect records</field>
+             <field name="code">qm.defect.records</field>
+             <field name="prefix">De-CG</field>
+             <field name="padding">6</field>
+             <field name="number_next">1</field>
+             <field name="number_increment">1</field>
+         </record>
+
+         <record id="sequence_qm_usage_decision" model="ir.sequence">
+             <field name="name">qm usage decision</field>
+             <field name="code">qm.usage.decision</field>
+             <field name="prefix">UD-CG</field>
+             <field name="padding">6</field>
+             <field name="number_next">1</field>
+             <field name="number_increment">1</field>
+         </record>
+    </data>
+</openerp>

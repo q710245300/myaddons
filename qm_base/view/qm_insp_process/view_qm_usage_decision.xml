@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="send_notice" model="ir.actions.act_window">
+            <field name="context">{'origin':'usage'}</field>
+            <field name="domain">[]</field>
+            <field name="name">质量通知</field>
+            <field name="res_model">qm.notice</field>
+            <field name="view_id" ref="view_form_qm_notice"/>
+        </record>
+        <record id="view_form_qm_usage_decision" model="ir.ui.view">
+            <field name="name">view form qm usage decision</field>
+            <field name="model">qm.usage.decision</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>使用决策
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="product_id"/>
+                                <field name="test_lot"/>
+                                <field name="lot_num"/>
+                                <field name="batch"/>
+                                <field name="simple_size"/>
+                                <field name="test_end_date"/>
+                                <field name="insp_order" invisible="1"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="fectory"/>
+                                <field name="origin"/>
+                                <field name="partner"/>
+                                <field name="product_owner"/>
+                                <field name="test_owner"/>
+                            </group>
+                        </group>
+                         <notebook>
+                             <page string="缺陷结构">
+                                 <field name="defect_struct_ids">
+                                     <tree editable="bottom" delete="false" create="false">
+                                         <field name="test_lot"/>
+                                         <field name="option"/>
+                                         <field name="test_feature"/>
+                                         <field name="defect_type"/>
+                                         <field name="defect_count"/>
+                                         <field name="defect_position"/>
+                                         <field name="defect_leval"/>
+                                         <field name="notice_state"/>
+                                         <field name="notice_send"/><!-- attrs="{'readonly': [('notice_state','=','send')]}"-->
+                                         <field name="defect_order_id" invisible="1"/>
+                                         <field name="qm_insp_order_id" invisible="1"/>
+                                     </tree>
+                                 </field>
+                             </page>
+                             <page string="特性概览">
+                                 <field name="result_order_ids">
+                                     <tree edit="false" create="false" delete="false">
+                                         <field name="insp_lot_num"/>
+                                         <field name="work_procedure_id"/>
+                                         <field name="project_type"/>
+                                         <field name="project_id"/>
+                                         <field name="d" string="不合格数" attrs="{'invisible':[('project_type','=','quantity')]}"/>
+                                         <field name="out_limit_count" string="不合格数" attrs="{'invisible':[('project_type','=','quality')]}"/>
+                                         <field name="project_accept"/>
+                                     </tree>
+                                 </field>
+                            </page>
+                        </notebook>
+                        <group>
+                            <group>
+                                <label for="qm_notice_type"/>
+                                <div>
+                                    <field name="qm_notice_type" class="oe_inline"/>
+                                    <button name="send_notice" string="发送" type="object" icon="fa-envelope" colspan="1" class="oe_edit_only"
+                                            context="{'qm_notice_type':qm_notice_type,'product_id':product_id,'test_lot':test_lot,'lot_num':lot_num,'partner':partner,'origin':origin,'defect_struct_ids': defect_struct_ids}"/>
+                                </div>
+                                <field name="usage_decision"/>
+                            </group>
+                            <group>
+                                <field name="later_option"/>
+                            </group>
+                        </group>
+                        <group string="库存转移信息">
+                            <field name="stock_move_info_ids" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="move_to"/>
+                                    <field name="move_count"/>
+                                    <field name="stock"/>
+                                    <field name="action"/>
+                                    <field name="follow_lot_num"/>
+                                    <field name="move_desc"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="usage_decision_persion"/>
+                            </group>
+                            <group>
+                                <field name="usage_decision_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_qm_usage_decision" model="ir.ui.view">
+            <field name="name">view tree qm usage decision</field>
+            <field name="model">qm.usage.decision</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="product_id"/>
+                    <field name="test_lot"/>
+                    <field name="lot_num"/>
+                    <field name="fectory"/>
+                    <field name="origin"/>
+                    <field name="partner"/>
+                    <field name="product_owner"/>
+                    <field name="test_owner"/>
+                    <field name="test_end_date"/>
+                    <field name="usage_decision"/>
+                    <field name="later_option"/>
+                    <field name="usage_decision_persion"/>
+                    <field name="usage_decision_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

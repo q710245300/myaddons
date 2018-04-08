@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_tree_qm_notcie">
+            <field name="name">qm notice tree</field>
+            <field name="model">qm.notice</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="origin"/>
+                    <field name="notice_type"/>
+                    <field name="original"/>
+                    <field name="send_date"/>
+                    <field name="person_in_charge"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_form_qm_notice">
+            <field name="name">QM Notice Form</field>
+            <field name="model">qm.notice</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="btn_notice_analysis" type="workflow" string="发送去分析" class="oe_highlight" states="draft_notice"/>
+                        <button name="btn_notice_wait" type="workflow" string="发送去评审" class="oe_highlight" states="analysis_notice"/>
+                        <button name="btn_notice_playing" type="workflow" string="确认" class="oe_highlight" states="wait_notice"/>
+                        <button name="btn_notice_done" type="workflow" string="完成" class="oe_highlight" states="playing_notice"/>
+                        <button name="btn_Cancel" type="workflow" string="取消" attrs="{'invisible':[('state','in',['notice_cancel','done_notice'])]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft_notice,analysis_notice,wait_notice,playing_notice,done_notice" statusbar_colors='{"confirmed":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>质量通知
+                                <field name="name" class="oe_inline"/>
+                            </h2>
+                        </div>
+                        <group >
+                            <group name="group_left">
+                                <field name="notice_type"/>
+                                <field name="partner"/>
+                                <field name="product_id"/>
+                                <field name="material_code"/>
+                                <field name="lot_num"/>
+                                <field name="test_lot"/>
+                                <field name="origin"/>
+                                <field name="original"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="person_in_charge"/>
+                                <field name="zd_analysiser"/>
+                                <field name="manager"/>
+                                <field name="fill_in_person"/>
+                                <field name="send_date"/>
+                                <field name="priority"/>
+                                <field name="deal_start_time"/>
+                                <field name="deal_end_time"/>
+                            </group>
+                        </group>
+                        <notebook>
+                             <page string="问题描述">
+                                 <field name="problem_desc"/>
+                             </page>
+                             <page string="缺陷分析">
+                                 <field name="defect_analysis_ids" attrs="{'readonly':['|',('state','!=','analysis_notice'),('analysiser','=',True)]}">
+                                     <tree editable="bottom">
+                                         <field name="test_feature"/>
+                                         <field name="defect_type"/>
+                                         <field name="defect_count"/>
+                                         <field name="defect_position"/>
+                                         <field name="defect_leval"/>
+                                         <field name="defect_reason"/>
+                                         <field name="defect_analysis"/>
+                                     </tree>
+                                 </field>
+                                 <group>
+                                     <group>
+                                        <field name="analysiser" attrs="{'readonly':[('state','!=','analysis_notice')]}"/>
+                                     </group>
+                                     <group>
+                                         <field name="analysis_date" attrs="{'readonly':[('state','!=','analysis_notice')]}"/>
+                                     </group>
+                                     <!--<group>
+                                        <field name="action_at_once" attrs="{'readonly':[('state','!=','analysis_notice')]}"/>
+                                     </group>
+                                     <group>
+                                         <field name="analysiser" attrs="{'readonly':[('state','!=','analysis_notice')]}"/>
+                                         <field name="analysis_date" attrs="{'readonly':[('state','!=','analysis_notice')]}"/>
+                                     </group>-->
+                                 </group>
+                            </page>
+                            <!--
+                            <page string="相关过程">
+                                 <field name="related_process_ids">
+                                     <tree>
+                                         <field name="insp_lot_num"/>
+                                         <field name="work_procedure_id"/>
+                                     </tree>
+                                 </field>
+                            </page>
+                            -->
+                            <page string="行动">
+                                 <field name="action_ids" attrs="{'readonly':['|',('state','not in',['wait_notice','playing_notice']),('assess_person','=',True)]}">
+                                     <tree>
+                                         <field name="name"/>
+                                         <field name="task"/>
+                                         <field name="desc"/>
+                                         <field name="related_defect"/>
+                                         <field name="response_type"/>
+                                         <field name="person_in_charge"/>
+                                         <field name="dead_date"/>
+                                         <field name="state"/>
+                                     </tree>
+                                 </field>
+                                <group string="计划评审">
+                                    <group>
+                                        <field name="plan_review"/>
+                                    </group>
+                                    <group>
+                                        <field name="action_plan_person"/>
+                                        <field name="action_plan_date"/>
+                                    </group>
+                                </group>
+                                <group string="实效评审">
+                                    <group>
+                                        <field name="effect_review"/>
+                                    </group>
+                                    <group>
+                                        <field name="assess_person"/>
+                                        <field name="assess_date"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!--<page string="相关审核">
+                                 <field name="result_order_ids">
+                                     <tree editable="bottom">
+                                         <field name="insp_lot_num"/>
+                                         <field name="work_procedure_id"/>
+                                     </tree>
+                                 </field>
+                            </page>-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tree_qm_actions">
+            <field name="name">qm action tree</field>
+            <field name="model">qm.actions</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="notice_id"/>
+                    <field name="name"/>
+                    <field name="response_type"/>
+                    <field name="qm_system"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_form_qm_actions">
+            <field name="name">QM Actions Form</field>
+            <field name="model">qm.actions</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="btn_plan_action" string="准备行动" class="oe_highlight" states="draft_action"/>
+                        <button name="btn_playing_action" string="行动" class="oe_highlight" states="plan_to_action"/>
+                        <button name="btn_done_action" string="完成" class="oe_highlight" states="playing_action"/>
+                        <!--成功状态由实效评审确认-->
+                        <!--<button name="btn_success" string="提交" class="oe_highlight" states="done_action"/>-->
+                        <button name="btn_Cancel" string="取消" attrs="{'invisible':[('state','in',['action_cancel','done_action','success'])]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft_action，plan_to_action,playing_action,done_action,success" statusbar_colors='{"confirmed":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <label for="request"/>
+                        <field name="request"/>
+                        <group >
+                            <group name="group_left">
+                                <field name="response_type"/>
+                                <field name="person_in_charge"/>
+                                <field name="dead_date"/>
+                                <field name="sell_team"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="name"/>
+                                <field name="date"/>
+                                <field name="qm_system"/>
+                            </group>
+                        </group>
+                        <label for="desc"/>
+                        <field name="desc"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

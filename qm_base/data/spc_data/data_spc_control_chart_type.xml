@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record model="spc.control_chart_type" id="control_chart_type_01">
+            <field name="name">均值-极差控制图</field>
+            <field name="control_chart_type_code">x_bar_range_chart</field>
+            <field name="quality_quantity_character">quantity_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_02">
+            <field name="name">均值-标准差控制图</field>
+            <field name="control_chart_type_code">x_bar_standard_deviation_chart</field>
+            <field name="quality_quantity_character">quantity_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_03">
+            <field name="name">单值-移动极差控制图</field>
+            <field name="control_chart_type_code">single_value_moving_range_chart</field>
+            <field name="quality_quantity_character">quantity_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_04">
+            <field name="name">中位数控制图</field>
+            <field name="control_chart_type_code">median_range_chart</field>
+            <field name="quality_quantity_character">quantity_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_05">
+            <field name="name">不合格品率控制图</field>
+            <field name="control_chart_type_code">defect_rate_p_chart</field>
+            <field name="quality_quantity_character">quality_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_06">
+            <field name="name">单位缺陷数控制图</field>
+            <field name="control_chart_type_code">unit_defect_number_u_chart</field>
+            <field name="quality_quantity_character">quality_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_07">
+            <field name="name">不合格品数控制图</field>
+            <field name="control_chart_type_code">defect_number_np_chart</field>
+            <field name="quality_quantity_character">quality_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_08">
+            <field name="name">缺陷数控制图</field>
+            <field name="control_chart_type_code">defect_number_c_chart</field>
+            <field name="quality_quantity_character">quality_character</field>
+        </record>
+        <record model="spc.control_chart_type" id="control_chart_type_09">
+            <field name="name">p图等效Z控制图</field>
+            <field name="control_chart_type_code">p_to_z_chart</field>
+            <field name="quality_quantity_character">quality_character</field>
+        </record>
+    </data>
+</openerp>
+

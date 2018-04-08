@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!--定义表单视图-->
+        <record id="view_form_trans_check_degree" model="ir.ui.view">
+            <field name="name">Trans Level Record From</field>
+            <field name="model">qm.trans.check.degree</field>
+            <field name="arch" type="xml">
+                <form string="检验级别转换记录">
+                    <header>
+                        <!--同意按钮-->
+                        <button name="btn_commit" string="提交" states="draft" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <button name="btn_confirm" string="确认" states="commit" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <button name="btn_approve" string="批准" states="confirm" type="workflow"
+                                class="oe_highlight">
+                        </button>
+
+                        <!--拒绝按钮-->
+                        <button name="btn_commit_refuse" string="拒绝" states="commit" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <button name="btn_confirm_refuse" string="拒绝" states="confirm" type="workflow"
+                                class="oe_highlight">
+                        </button>
+
+                        <!--取消按钮-->
+                        <button name="btn_draft_cancel" string="取消" states="draft" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <button name="btn_commit_cancel" string="取消" states="commit" type="workflow"
+                                class="oe_highlight">
+                        </button>
+                        <button name="btn_confirm_cancel" string="取消" states="confirm" type="workflow"
+                                class="oe_highlight">
+                        </button>
+
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,commit,confirm,approve"
+                               readonly="1"
+                               statusbar_colors='{"cancel":"red","approve":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>检验严格度转移确认单
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group name="group_1" string="产品基础信息">
+                            <group name="group_left">
+                                <field name="product_name"/>
+                                <field name="importance_degree"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="product_num"/>
+                            </group>
+                        </group>
+                        <group name="group_2" string="调整参量" colspan="4">
+                            <group name="group_left">
+                                <field name="inspection_order"/>
+                                <field name="check_degree"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="trans_score"/>
+                            </group>
+                        </group>
+                        <group name="group_3" string="检验级别的调整">
+                            <group name="group_left">
+                                <field name="suggest_check_degree"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                        <group name="group_4">
+                            <group name="group_left">
+                                <field name="inspector_sign"/>
+                                <field name="charge_sign"/>
+                                <field name="chief_sign"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="inspector_time"/>
+                                <field name="charge_time"/>
+                                <field name="chief_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 定义列表视图 -->
+        <record id="view_tree_trans_check_degree" model="ir.ui.view">
+            <field name="name">Trans Level Record Tree</field>
+            <field name="model">qm.trans.check.degree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="product_name"/>
+                    <field name="product_num"/>
+                    <field name="check_degree"/>
+                    <field name="suggest_check_degree"/>
+                    <field name="inspection_order"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>

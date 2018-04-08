@@ -1,0 +1,135 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_insp_task_result" model="ir.ui.view">
+            <field name="name">检测结果</field>
+            <field name="model">qm.insp.task.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="create_sample_record" type="object"
+                                string="创建" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>样本特性检验单
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="product_id"/>
+                                <field name="insp_lot_num"/>
+                                <field name="result_record_way"/>
+                                <field name="work_procedure_id"/>
+                                <field name="sample_plan_id"/>
+                                <field name="project_type"/>
+                                <field name="project_id"/>
+                                <field name="accept_depend"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="factory"/>
+                                <field name="lot_num"/>
+                                <field name="insp_principal"/>
+                                <field name="sample_count"/>
+                                <field name="response_json_data" invisible="1"/>
+                                <field name="ac" attrs="{'invisible':[('project_type','!=','quality')]}"/>
+                                <field name="re" attrs="{'invisible':[('project_type','!=','quality')]}"/>
+                                <field name="measurement_units" invisible='1'/>
+                                <field name="target_value" attrs="{'invisible':[('project_type','!=','quantity')]}"/>
+                                <field name="u" attrs="{'invisible':[('project_type','!=','quantity')]}"/>
+                                <field name="l" attrs="{'invisible':[('project_type','!=','quantity')]}"/>
+                                <field name="is_sigma" ></field>
+                                <field name="sigma" attrs="{'invisible':[('is_sigma','!=',True)]}"></field>
+                            </group>
+                        </group>
+                        <group string="结果记录" attrs="{'invisible':[('result_record_way','==','total_record')]}">
+                            <field name="single_quality_results" widget="one2many_list"
+                                   attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quality')]}">
+                                <tree string="Items" editable="bottom">
+                                    <field name="sample_num"/>
+                                    <field name="sample_insp_result" />
+                                    <field name="sample_insp_describe"/>
+                                </tree>
+                            </field>
+                            <field name="single_quantify_results" widget="one2many_list"
+                                   attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}">
+                                <tree string="Items" editable="bottom">
+                                    <field name="sample_num"/>
+                                    <field name="sample_insp_result"/>
+                                    <field name="measurement_units"/>
+                                    <field name="sample_insp_num"/>
+                                    <field name="sample_insp_avg"/>
+                                    <field name="sample_insp_describe"/>
+                                </tree>
+                            </field>
+                            <field name="classified_quality_results" widget="one2many_list"
+                                   attrs="{'invisible':['|',('result_record_way','!=','classified_record'),('project_type','!=','quality')]}">
+                                <tree string="Items" editable="bottom">
+                                    <field name="sample_insp_code"/>
+                                    <field name="sample_group_count"/>
+                                    <field name="sample_insp_describe"/>
+                                </tree>
+                            </field>
+
+                            <field name="classified_quantify_results" widget="one2many_list"
+                                   attrs="{'invisible':['|',('result_record_way','!=','classified_record'),('project_type','!=','quantity')]}">
+                                <tree string="Items" editable="bottom">
+                                    <field name="sample_insp_code"/>
+                                    <field name="sample_insp_u"/>
+                                    <field name="sample_insp_l"/>
+                                    <field name="sample_group_count"/>
+                                    <field name="sample_insp_describe"/>
+                                </tree>
+                            </field>
+                        </group>
+
+
+                        <group string="检验结果">
+                            <group name="group_left">
+                                <field name="x_avg"
+                                       attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}"/>
+                                <field name="s"
+                                       attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}"/>
+                                <field name="me"
+                                       attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}"/>
+                                <field name="sample_status_code"/>
+                                <field name="d" attrs="{'invisible':[('project_type','!=','quality')]}"/>
+                                <field name="out_limit_count" attrs="{'invisible':[('project_type','!=','quantity')]}"/>
+                                <field name="project_accept"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="x_max"
+                                       attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}"/>
+                                <field name="x_min"
+                                       attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}"/>
+                                <field name="r"
+                                       attrs="{'invisible':['|',('result_record_way','!=','single_record'),('project_type','!=','quantity')]}"/>
+                                <field name="insp_person"/>
+                                <field name="insp_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_tree_qm_insp_task_result" model="ir.ui.view">
+            <field name="name">检测结果</field>
+            <field name="model">qm.insp.task.record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_id"/>
+                    <field name="factory"/>
+                    <field name="lot_num"/>
+                    <field name="insp_lot_num"/>
+                    <field name="work_procedure_id"/>
+                    <field name="project_id"/>
+                    <field name="project_type"/>
+                    <field name="project_accept"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record model="qm.trans.rule" id="RULE_GB_T2828_1_2012">
+            <field name="name">宽严度调整规则（GB/T2828.1-2012）</field>
+        </record>
+        <record model="qm.trans.rule" id="RULE_GB_T6378_1_2008">
+            <field name="name">宽严度调整规则 / s法与σ法的转换规则（GB/T6378.1-2008）</field>
+        </record>
+        <record model="qm.trans.rule" id="RULE_GB_T2828_3_2005">
+            <field name="name">允许跳批的动态调整规则（GB/T2828.1-2012 / GB/T2828.3-2005）</field>
+        </record>
+    </data>
+</openerp>
+

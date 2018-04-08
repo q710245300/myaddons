@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_station_check_point" model="ir.ui.view">
+            <field name="name">QM Station Check Point Form</field>
+            <field name="model">station.check.point</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group name="group_left">
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="num"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_station_check_point" model="ir.ui.view">
+            <field name="name">QM Station Check Point Tree</field>
+            <field name="model">station.check.point</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="num"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

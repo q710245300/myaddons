@@ -1,0 +1,161 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_plan_for_instruction" model="ir.ui.view">
+            <field name="name">检验计划</field>
+            <field name="model">qm.plan.instruction</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>检验计划
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="insp_plan_type" readonly="0"/>
+                        </group>
+                        <group>
+                            <group name="group_left">
+                                <field name="usage"/>
+                                <field name="test_object" widget="radio" class="oe_edit_only" readonly="0"
+                                       options="{'horizontal': true}"
+                                       attrs="{'invisible':[('insp_plan_type','!=','import_material_insp')]}"/>
+                                <field name="product_id"
+                                       attrs="{'invisible':[('insp_plan_type','=','import_material_insp'),('test_object','!=','products')]}"/>
+                                <field name="product_num"
+                                       attrs="{'invisible':['|',('insp_plan_type','!=','import_material_insp'),('test_object','!=','products')]}"/>
+                                <field name="product_type"
+                                       attrs="{'invisible':[('insp_plan_type','=','import_material_insp')]}"/>
+                                <field name="technology"
+                                       attrs="{'invisible':[('insp_plan_type','!=','making_product_insp')]}"/>
+                                <field name="key_parts_type"
+                                       attrs="{'invisible':[('insp_plan_type','!=','making_procedure_insp')]}"/>
+                                <field name="key_parts_num"
+                                       attrs="{'invisible':[('insp_plan_type','!=','making_procedure_insp')]}"/>
+                                <field name="delivery_type"
+                                       attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}"/>
+                                <field name="customer"
+                                       attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}"/>
+                                <field name="lot_min"/>
+                                <field name="lot_max"/>
+                                <field name="sample_plan_id"/>
+                                <field name="dynamic_modify_rule"
+                                       attrs="{'invisible':[('insp_plan_type','!=','import_material_insp')]}"/>
+                                <field name="interval_of_check"
+                                       attrs="{'invisible':[('insp_plan_type','!=','making_product_insp')]}"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="factory_id"
+                                       attrs="{'invisible':[('insp_plan_type','==','import_material_insp'),('test_object','!=','products')]}"/>
+                                <field name="supplier_id"
+                                       attrs="{'invisible':['|',('insp_plan_type','!=','import_material_insp'),('test_object','!=','products')]}"/>
+                                <field name="stock_location"
+                                       attrs="{'invisible':['|',('insp_plan_type','!=','import_material_insp'),('test_object','!=','products')]}"/>
+                                <field name="product_line"
+                                       attrs="{'invisible':[('insp_plan_type','in',['import_material_insp','export_good_insp'])]}"/>
+                                <field name="sub_product_line"
+                                       attrs="{'invisible':[('insp_plan_type','in',['import_material_insp','export_good_insp'])]}"/>
+                                <field name="order_type"
+                                       attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}"/>
+                                <field name="stock_address"
+                                       attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}"/>
+                                <field name="test_charge_persion"/>
+                                <field name="planner_group"/>
+                                <field name="date_start"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible':['|',('insp_plan_type','!=','import_material_insp'),('test_object','!=','product_groups')]}">
+                            <field name="product_ids" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="product_num"/>
+                                    <field name="factory"/>
+                                    <field name="stock_location"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="workstage_one" widget="one2many_list"
+                                   attrs="{'invisible':[('insp_plan_type','!=','import_material_insp')]}">
+                                <tree editable="bottom">
+                                    <field name="workstage_id"
+                                           domain="[('insp_plan_type', '=','import_material_insp')]"/>
+                                    <field name="work_num"/>
+                                    <field name="work_content_desc"/>
+                                    <field name="work_center"/>
+                                    <field name="quality_standard"/>
+                                    <field name="hour_count"/>
+                                    <field name="check_group"/>
+                                    <field name="resposible_person"/>
+                                </tree>
+                            </field>
+                            <field name="workstage_two" widget="one2many_list"
+                                   attrs="{'invisible':[('insp_plan_type','!=','making_product_insp')]}">
+                                <tree editable="bottom">
+                                    <field name="workstage_id"
+                                           domain="[('insp_plan_type', '=','making_product_insp')]"/>
+                                    <field name="work_num"/>
+                                    <field name="work_procedure_type"/>
+                                    <field name="key_work_procedure"/>
+                                    <field name="work_content_desc"/>
+                                    <field name="quality_standard"/>
+                                    <field name="work_center"/>
+                                    <field name="inspection_mode"/>
+                                    <field name="hour_count"/>
+                                    <field name="check_group"/>
+                                    <field name="resposible_person"/>
+                                </tree>
+                            </field>
+                            <field name="workstage_three" widget="one2many_list"
+                                   attrs="{'invisible':[('insp_plan_type','!=','making_procedure_insp')]}">
+                                <tree editable="bottom">
+                                    <field name="workstage_id"
+                                           domain="[('insp_plan_type', '=','making_procedure_insp')]"/>
+                                    <field name="work_num"/>
+                                    <field name="work_content_desc"/>
+                                    <field name="quality_standard"/>
+                                    <field name="work_center"/>
+                                    <field name="inspection_mode"/>
+                                    <field name="hour_count"/>
+                                    <field name="check_group"/>
+                                    <field name="resposible_person"/>
+                                </tree>
+                            </field>
+                            <field name="workstage_four" widget="one2many_list"
+                                   attrs="{'invisible':[('insp_plan_type','!=','export_good_insp')]}">
+                                <tree editable="bottom">
+                                    <field name="workstage_id" domain="[('insp_plan_type', '=','export_good_insp')]"/>
+                                    <field name="work_num"/>
+                                    <field name="work_content_desc"/>
+                                    <field name="quality_standard"/>
+                                    <field name="work_center"/>
+                                    <field name="hour_count"/>
+                                    <field name="check_group"/>
+                                    <field name="resposible_person"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_qm_plan_for_instruction" model="ir.ui.view">
+            <field name="name">检验计划</field>
+            <field name="model">qm.plan.instruction</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="insp_plan_type"/>
+                    <field name="product_id"/>
+                    <field name="factory_id"/>
+                    <field name="sample_plan_id"/>
+                    <field name="usage"/>
+                    <field name="test_charge_persion"/>
+                    <field name="planner_group"/>
+                    <field name="date_start"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

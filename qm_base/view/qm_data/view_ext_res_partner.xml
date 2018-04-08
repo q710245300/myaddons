@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="extend_partner">
+            <field name="name">Partner From</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[@name='internal_notes']" position="before">
+                    <page name="product_list" string="供应产品">
+
+                        <field name="product_list">
+                            <tree>
+                                <field name="product_name"/>
+                                <field name="product_num"/>
+                                <field name="importance_category"/>
+                                <field name="test_mode"/>
+                                <field name="trans_score"/>
+                                <field name="ac_score"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

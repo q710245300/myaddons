@@ -1,0 +1,47 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_qm_insp_method_def" model="ir.ui.view">
+            <field name="name">qm insp method def form</field>
+            <field name="model">qm.insp_method_def</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>检验方法 <field name="name" class="oe_inline"/></h2>
+                        </div>
+                        <group name="top">
+                            <group name="group_left">
+                                <field name="belong_to_plant"></field>
+                                <field name="insp_qualification"></field>
+                                <field name="brief_description"></field>
+                                <field name="refer_insp_inst"></field>
+                            </group>
+                            <group name="group_right">
+                                <field name="inspect_equipment"></field>
+                                <field name="valid_start"></field>
+                                <field name="valid_start_date" attrs="{'invisible':[('valid_start','=',False)]}" ></field>
+                            </group>
+                        </group>
+                        <group name="bottom" >
+                            <field name="detailed_description"></field>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_qm_insp_method_def"   model="ir.ui.view">
+            <field name="name">qm insp method def tree</field>
+            <field name="model">qm.insp_method_def</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="brief_description"></field>
+                    <field name="belong_to_plant"></field>
+                    <field name="valid_start_date"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

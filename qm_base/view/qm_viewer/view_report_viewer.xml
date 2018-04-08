@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_report_view" model="ir.ui.view">
+            <field name="name">Rrport View Form</field>
+            <field name="model">report.viewer</field>
+            <field name="arch" type="xml">
+                <form string="报表系统">
+                     <div style="position:absolute; left:0; top:10; width:100%; height:100%;">
+                         <iframe src="http://192.168.4.30:8097/index.html" width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="no" scrolling="no" style="border-width:0px;">
+                         </iframe>
+                     </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

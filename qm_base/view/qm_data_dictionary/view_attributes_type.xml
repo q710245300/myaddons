@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_attributes_type" model="ir.ui.view">
+            <field name="name">QM Attributes Type Form</field>
+            <field name="model">attributes.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                      <group>
+                            <group name="group_left">
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+
+                            </group>
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 定义列表视图 -->
+          <record id="view_tree_qm_attributes_type" model="ir.ui.view">
+            <field name="name">QM Attributes Type Tree</field>
+            <field name="model">attributes.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
+

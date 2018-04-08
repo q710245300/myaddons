@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+
+
+<!--GB_T2828_1_2012-->
+        <record model="qm.sample_check_type" id="GB_T2828_1_2012_1">
+            <field name="name">整数一次抽样</field>
+            <field name="sample_type_code">Integer_one_sample</field>
+            <field name="gb_standard_id" ref="GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.sample_check_type" id="GB_T2828_1_2012_2">
+            <field name="name">整数二次抽样</field>
+            <field name="sample_type_code">Integer_two_sample</field>
+            <field name="gb_standard_id" ref="GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.sample_check_type" id="GB_T2828_1_2012_3">
+            <field name="name">整数多次抽样</field>
+            <field name="sample_type_code">Integer_many_sample</field>
+            <field name="gb_standard_id" ref="GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.sample_check_type" id="GB_T2828_1_2012_4">
+            <field name="name">分数固定一次抽样</field>
+            <field name="sample_type_code">Fraction_one_sample_unfixed</field>
+            <field name="gb_standard_id" ref="GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.sample_check_type" id="GB_T2828_1_2012_5">
+            <field name="name">分数不固定一次抽样</field>
+            <field name="sample_type_code">Fraction_one_sample_unfixed</field>
+            <field name="gb_standard_id" ref="GB_T2828_1_2012" ></field>
+        </record>
+
+<!-- GB_T6378_1_2008-->
+        <record model="qm.sample_check_type" id="GB_T6378_1_2008_1">
+            <field name="name">单侧规范限S法</field>
+            <field name="sample_type_code">one_side_s_method</field>
+            <field name="gb_standard_id" ref="GB_T6378_1_2008"></field>
+        </record>
+		<record model="qm.sample_check_type" id="GB_T6378_1_2008_2">
+            <field name="name">双侧规范限S法</field>
+            <field name="sample_type_code">both_side_s_method</field>
+            <field name="gb_standard_id" ref="GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.sample_check_type" id="GB_T6378_1_2008_3">
+            <field name="name">单侧规范限σ法</field>
+            <field name="sample_type_code">one_side_sigma_method</field>
+            <field name="gb_standard_id" ref="GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.sample_check_type" id="GB_T6378_1_2008_4">
+            <field name="name">双侧规范限σ法</field>
+            <field name="sample_type_code">both_side_sigma_method</field>
+            <field name="gb_standard_id" ref="GB_T6378_1_2008"></field>
+        </record>
+    </data>
+</openerp>

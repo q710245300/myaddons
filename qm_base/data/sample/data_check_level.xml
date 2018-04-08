@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+<!--GB_T2828_1_2012-->
+
+
+
+<!--整数一次抽样-->
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_1_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_1"></field>
+        </record>
+
+
+
+<!--整数二次抽样-->
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_2_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_2"></field>
+        </record>
+
+
+
+<!--整数多次抽样-->
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_3_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_3"></field>
+        </record>
+
+
+
+<!--分数固定一次抽样-->
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_4_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_4"></field>
+        </record>
+
+
+
+<!--分数不固定一次抽样-->
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T2828_1_2012_5_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T2828_1_2012_5"></field>
+        </record>
+
+
+
+<!--GB_T6378_1_2008-->
+        
+
+
+<!--单侧规范限S法-->
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_1_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_1"></field>
+        </record>
+
+
+
+<!--双侧规范限S法-->
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_2_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_2"></field>
+        </record>
+
+
+<!--单侧规范限σ法  -->
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_3_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_3"></field>
+        </record>
+
+
+
+<!--双侧规范限σ法 -->
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_1">
+            <field name="name">S-1</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_2">
+            <field name="name">S-2</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_3">
+            <field name="name">S-3</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_4">
+            <field name="name">S-4</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_5">
+            <field name="name">I</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_6">
+            <field name="name">II</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+        <record model="qm.check_level" id="GB_T6378_1_2008_4_7">
+            <field name="name">III</field>
+            <field name="sample_check_type_id" ref="GB_T6378_1_2008_4"></field>
+        </record>
+
+    </data>
+</openerp>
+

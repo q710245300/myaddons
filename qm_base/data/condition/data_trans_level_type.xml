@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+
+        <!--GB_T2828_1_2012-->
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_1_2012_1">
+            <field name="name">正常 转 放宽</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_1_2012_2">
+            <field name="name">放宽 转 正常</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_1_2012_3">
+            <field name="name">正常 转 加严</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_1_2012_4">
+            <field name="name">加严 转 正常</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_1_2012_5">
+            <field name="name">加严 转 暂停</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_1_2012"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_1_2012_6">
+            <field name="name">暂停 转 加严</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_1_2012"></field>
+        </record>
+
+
+
+        <!--GB_T6378_1_2008-->
+        <record model="qm.trans.level.type" id="TYPE_GB_T6378_1_2008_1">
+            <field name="name">正常 转 放宽</field>
+            <field name="trans_rule_id" ref="RULE_GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T6378_1_2008_2">
+            <field name="name">放宽 转 正常</field>
+            <field name="trans_rule_id" ref="RULE_GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T6378_1_2008_3">
+            <field name="name">正常 转 加严</field>
+            <field name="trans_rule_id" ref="RULE_GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T6378_1_2008_4">
+            <field name="name">加严 转 正常</field>
+            <field name="trans_rule_id" ref="RULE_GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T6378_1_2008_5">
+            <field name="name">加严 转 暂停</field>
+            <field name="trans_rule_id" ref="RULE_GB_T6378_1_2008"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T6378_1_2008_6">
+            <field name="name">暂停 转 加严</field>
+            <field name="trans_rule_id" ref="RULE_GB_T6378_1_2008"></field>
+        </record>
+
+
+
+        <!--GB_T2828_3_2005-->
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_1">
+            <field name="name">正常 转 放宽</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_2">
+            <field name="name">放宽 转 正常</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_3">
+            <field name="name">正常 转 加严</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_4">
+            <field name="name">加严 转 正常</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_5">
+            <field name="name">加严 转 暂停</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_6">
+            <field name="name">暂停 转 加严</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+
+
+        <!--跳检部分-->
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_7">
+            <field name="name">【跳检】状态1 转 状态2(f=1/4)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_8">
+            <field name="name">【跳检】状态1 转 状态2(f=1/3)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+          <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_9">
+            <field name="name">【跳检】状态1 转 状态2(f=1/2)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_10">
+            <field name="name">【跳检】状态2 转 状态3</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_11">
+            <field name="name">【跳检】状态3 转 状态2（频率高一档）</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_12">
+            <field name="name">【跳检】状态3 转 状态1</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_13">
+            <field name="name">【跳检】状态2或3 转 状态1</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_14">
+            <field name="name">【跳检】状态2(f=1/2) 转 状态2 (f=1/3)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_15">
+            <field name="name">【跳检】状态2(f=1/3) 转 状态2(f=1/4)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_16">
+            <field name="name">【跳检】状态2(f=1/4) 转 状态2(f=1/5)(不能用于初始频率)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_17">
+            <field name="name">【跳检】状态2(f=1/5) 转 状态2(f=1/4)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_18">
+            <field name="name">【跳检】状态2(f=1/4) 转 状态2(f=1/3)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+        <record model="qm.trans.level.type" id="TYPE_GB_T2828_3_2005_19">
+            <field name="name">【跳检】状态2(f=1/3) 转 状态2(f=1/2)</field>
+            <field name="trans_rule_id" ref="RULE_GB_T2828_3_2005"></field>
+        </record>
+
+    </data>
+</openerp>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_pro_line_num" model="ir.ui.view">
+            <field name="name">QM Pro Line Num Form</field>
+            <field name="model">qm.pro.line.num</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="请选择">
+                            <group name="group_left">
+                                <field name="belong_factory"/>
+                                <field name="work_shop_code"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="factory_code"/>
+                                  <field name="product_line_num"/>
+                            </group>
+                        </group>
+                        <header>
+                            <button name="create_pro_line_code" type="object"
+                                    string="生成生产线编码" class="oe_highlight"/>
+                        </header>
+                        <group string="">
+                            <group name="group_left">
+                                <field name="name"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_pro_line_num" model="ir.ui.view">
+            <field name="name">QM Pro Line Num Tree</field>
+            <field name="model">qm.pro.line.num</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

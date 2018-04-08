@@ -1,0 +1,102 @@
+<?xml version="1.0"  ?>
+<openerp>
+    <data>
+        <record id="view_form_qm_insp_task" model="ir.ui.view">
+            <field name="name">检验工序</field>
+            <field name="model">qm.insp.task</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group name="group_left">
+                                <field name="product_id"/>
+                                <field name="insp_lot_num"/>
+                                <field name="work_procedure_id"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="factory"/>
+                                <field name="lot_num"/>
+                            </group>
+                        </group>
+                        <group>
+                            <button name="update_records" type="object"
+                                    string="创建" class="oe_highlight"/>
+                        </group>
+                        <group string="检验特性"></group>
+                        <field name="record_quality" widget="one2many_list">
+                            <tree string="Items" editable="bottom">
+                                <field name="project_id"/>
+                                <field name="importance_degree"/>
+                                <field name="depend_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="sample_count"/>
+                                <field name="ac"/>
+                                <field name="re"/>
+                                <field name="result_record_way"/>
+                                <field name="accept_depend"/>
+                                <field name="record_bill"/>
+                                <field name="d"/>
+                                <field name="defect_record" domain="[('name','=',False)]" context="{'record_id': active_id,'test_feature':'quality'}"/>
+                                <!--<button name="action_open_defect_records" type="object" icon="fa-book"  class="oe_edit_only"/>-->
+                                <field name="defect_level"/>
+                                <field name="project_accept"/>
+                            </tree>
+                        </field>
+                        <field name="record_quantify" widget="one2many_list">
+                            <tree string="Items" editable="bottom">
+                                <field name="project_id"/>
+                                <field name="importance_degree"/>
+                                <field name="depend_standard"/>
+                                <field name="insp_method_id"/>
+                                <field name="sample_count"/>
+                                <field name="target_value"/>
+                                <field name="u"/>
+                                <field name="l"/>
+                                <field name="measurement_units"/>
+                                <field name="result_record_way"/>
+                                <field name="record_bill"/>
+                                <field name="x_max"/>
+                                <field name="x_min"/>
+                                <field name="x_avg"/>
+                                <field name="s"/>
+                                <field name="r"/>
+                                <field name="me"/>
+                                <field name="out_limit_count"/>
+                                <field name="defect_record" domain="[('name','=',False)]" context="{'record_id': active_id,'test_feature':'quantify'}"/>
+                                <field name="defect_level"/>
+                                <field name="project_accept"/>
+                            </tree>
+                        </field>
+
+                        <group>
+                            <group name="group_left">
+                                <field name="finish_insp_count" attrs="{'invisible':True}"/>
+                                <field name="qualified_count" attrs="{'invisible':True}"/>
+                                <field name="unqualified_count" attrs="{'invisible':True}"/>
+                                <field name="insp_state" attrs="{'invisible':True}"/>
+                            </group>
+                            <group name="group_right">
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_tree_qm_inspection_task" model="ir.ui.view">
+            <field name="name">检验工序</field>
+            <field name="model">qm.insp.task</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="insp_lot_num"/>
+                    <field name="factory"/>
+                    <field name="lot_num"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

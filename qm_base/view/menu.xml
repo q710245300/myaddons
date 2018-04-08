@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    <!-- 定义动作-->
+        <!-- 质量计划 -->
+        <act_window id="action_qm_plan_for_instruction" name="检验计划"
+                    res_model="qm.plan.instruction" view_mode="tree,form"/>
+        <act_window id="action_qm_work_procedure" name="工序"
+                    res_model="qm.work_procedure" view_mode="tree,form"></act_window>
+        <act_window id="action_qm_insp_project_def" name="检验项目"
+                    res_model="qm.insp_project_def" view_mode="tree,form"></act_window>
+        <act_window id="action_qm_insp_method_def" name="检验方法"
+                    res_model="qm.insp_method_def" view_mode="tree,form"></act_window>
+        <act_window id="action_qm_sample_plan" name="采样方案"
+                    res_model="qm.sample_plan" view_mode="tree,form"></act_window>
+        <!-- 质量检验 -->
+        <act_window id="action_qm_inspection_order" name="质量检验单"
+                    res_model="qm.inspection.order" view_mode="tree,form"/>
+        <act_window id="action_qm_inspect_task" name="检验工序台账"
+                    res_model="qm.insp.task" view_mode="tree,form"></act_window>
+        <act_window id="action_qm_inspect_task_record" name="结果记录"
+                    res_model="qm.insp.task.record" view_mode="tree,form"></act_window>
+        <act_window id="action_qm_defect_record" name="缺陷记录"
+                    res_model="qm.defect.record" view_mode="tree"/>
+        <!-- 质量控制 -->
+        <act_window id="action_qm_spc_data" name="spc数据"
+                    res_model="qm.spc_data" view_mode="tree,form"></act_window>
+        <record id="action_report_view" model="ir.actions.act_window">
+            <field name="name">SPC</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">report.viewer</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_form_report_view"/>
+        </record>
+    <!-- 定义菜单 -->
+        <!--顶级菜单-->
+        <menuitem id="menu_qm" name="质量管理数据字典"/>
+        <menuitem id="menu_qmis" name="质量管理"/>
+        <!-- 二级菜单 -->
+        <menuitem id="menu_qm_data" name="质量数据" parent="menu_qmis"/>
+        <menuitem id="menu_qm_plan" name="质量计划" parent="menu_qmis"/>
+        <menuitem id="menu_qm_inspect" name="质量检验" parent="menu_qmis"/>
+        <menuitem id="menu_report_viewer" name="质量控制" parent="menu_qmis"/>
+        <!--质检计划-->
+        <menuitem id="menu_qm_plan_for_instruction" name="检验计划" parent="menu_qm_plan"           action="action_qm_plan_for_instruction" sequence="10"/>
+        <menuitem id="menu_qm_work_procedure" name="检验工序" parent="menu_qm_plan"
+                  action="action_qm_work_procedure" sequence="20"/>
+        <menuitem id="menu_qm_insp_project" name="检验项目" parent="menu_qm_plan"
+                  action="action_qm_insp_project_def" sequence="30"/>
+        <menuitem id="menu_qm_insp_method_def" name="检验方法" parent="menu_qm_plan"
+                  action="action_qm_insp_method_def" sequence="40"/>
+        <menuitem id="menu_qm_sample_plan" name="采样方案" parent="menu_qm_plan"
+                  action="action_qm_sample_plan" sequence="60"/>
+        <!--质量检验-->
+        <menuitem id="menu_qm_inspection_order" name="质量检验单" parent="menu_qm_inspect"          action="action_qm_inspection_order"/>
+        <menuitem id="menu_qm_inspect_task" name="检验工序台账" parent="menu_qm_inspect"          action="action_qm_inspect_task"/>
+        <menuitem id="menu_qm_inspect_task_record" name="结果记录" parent="menu_qm_inspect"          action="action_qm_inspect_task_record"/>
+        <menuitem id="menu_qm_defect_record" name="缺陷记录" parent="menu_qm_inspect"
+                  action="action_qm_defect_record"/>
+        <!-- 质量控制 -->
+        <menuitem id="menu_qm_spc_data" name="SPC数据" parent="menu_report_viewer"
+                  action="action_qm_spc_data"></menuitem>
+        <menuitem id="menu_report_view" name="SPC控制图" parent="menu_report_viewer"
+                  action="action_report_view"/>
+        <act_window id="action_qm_attributes" name="特征属性"
+                    res_model="qm.attributes" view_mode="tree,form"/>
+        <act_window id="action_qm_attributes_type" name="特征分类"
+                    res_model="attributes.type" view_mode="tree,form"/>
+        <act_window id="action_qm_defect" name="缺陷类型"
+                    res_model="qm.defects" view_mode="tree,form"/>
+        <act_window id="action_qm_defect_type" name="缺陷类别"
+                    res_model="defects.type" view_mode="tree,form"/>
+        <act_window id="action_qm_defect_level" name="缺陷等级"
+                    res_model="defects.level" view_mode="tree,form"/>
+        <act_window id="action_qm_policy" name="使用决策"
+                    res_model="qm.policy" view_mode="tree,form"/>
+        <act_window id="action_qm_trans_rule" name="动态转移规则"
+                    res_model="qm.trans.rule" view_mode="tree,form"/>
+        
+        <act_window id="action_qm_usage" name="检验计划使用方法"
+                    res_model="qm.usage" view_mode="tree,form"/>
+        <act_window id="action_qm_technology" name="检验计划工艺规范"
+                    res_model="qm.technology" view_mode="tree,form"/>
+        <act_window id="action_qm_city_code" name="城市代码"
+                    res_model="qm.city.code" view_mode="tree,form"/>
+        <act_window id="action_qm_plan_person_group" name="计划这组"
+                    res_model="qm.plan.person.group" view_mode="tree,form"/>
+        <act_window id="action_qm_factory" name="工厂"
+                    res_model="qm.factory" view_mode="tree,form"/>
+        <act_window id="action_qm_pro_line" name="生产线"
+                    res_model="qm.pro.line" view_mode="tree,form"/>
+        <act_window id="action_qm_pro_line_kid" name="子生产线"
+                    res_model="qm.pro.line.kid" view_mode="tree,form"/>
+        <act_window id="action_qm_gb_standard" name="国标"
+                    res_model="qm.gb_standard" view_mode="tree,form"/>
+        <menuitem id="menu_qm_catalog" name="目录" parent="menu_qm"/>
+        <menuitem id="menu_qm_standard" name="标准数值" parent="menu_qm"/>
+        <menuitem id="menu_qm_defect_all" name="缺陷类型" parent="menu_qm_catalog"/>
+        <menuitem id="menu_qm_defect" name="缺陷类型" parent="menu_qm_defect_all"
+            action="action_qm_defect"/>
+        <menuitem id="menu_qm_defect_type" name="缺陷类别" parent="menu_qm_defect_all" 
+            action="action_qm_defect_type"/>
+        <menuitem id="menu_qm_defect_level" name="缺陷等级" parent="menu_qm_defect_all"
+            action="action_qm_defect_level"/>
+        <menuitem id="menu_qm_attributes_all" name="特征属性" parent="menu_qm_catalog"/>
+        <menuitem id="menu_qm_attributes" name="特征属性" parent="menu_qm_attributes_all"
+            action="action_qm_attributes"/>
+        <menuitem id="menu_qm_attributes_type" name="特征类别" parent="menu_qm_attributes_all"
+            action="action_qm_attributes_type"/>
+        <menuitem id="menu_qm_word_all" name="规范文档" parent="menu_qm_catalog"/>
+        <menuitem id="menu_qm_usage" name="检验计划使用方法" parent="menu_qm_word_all" 
+            action="action_qm_usage"/>
+        <menuitem id="menu_qm_technology" name="检验计划工艺规范" parent="menu_qm_word_all"
+            action="action_qm_technology"/>
+        <menuitem id="menu_qm_city_code" name="城市代码" parent="menu_qm_word_all"
+            action="action_qm_city_code"/>
+        <menuitem id="menu_qm_trans_rule" name="动态转移规则" parent="menu_qm_catalog" 
+                  action="action_qm_trans_rule"/>
+        <menuitem id="menu_qm_policy" name="使用决策" parent="menu_qm_catalog"
+            action="action_qm_policy"/>
+        <menuitem id="menu_qm_station" name="工位" parent="menu_qm"/>
+        <menuitem id="menu_qm_person_all" name="人员配置" parent="menu_qm_station"/>
+        <menuitem id="menu_qm_qm_plan_person_group" name="计划这组" parent="menu_qm_person_all"
+            action="action_qm_plan_person_group"/>
+        <menuitem id="menu_qm_factory" name="工厂" parent="menu_qm_station"
+                  action="action_qm_factory"/>
+        <menuitem id="menu_qm_pro_line" name="生产线" parent="menu_qm_station"
+                  action="action_qm_pro_line"/>
+        <menuitem id="menu_qm_pro_line_kid" name="子生产线" parent="menu_qm_station"
+                  action="action_qm_pro_line_kid"/>
+
+        <menuitem id="menu_qm_gb_standard" name="国标" parent="menu_qm"
+                  sequence="50"/>
+        <menuitem id="menu_qm_gb_standard_item" name="国标" parent="menu_qm_gb_standard" action="action_qm_gb_standard"/>
+
+        <act_window id="action_qm_check_task_item" name="任务列表"
+                    res_model="qm.check_task_item" view_mode="tree,form"></act_window>
+    </data>
+</openerp>

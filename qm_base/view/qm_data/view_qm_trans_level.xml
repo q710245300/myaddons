@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_form_qm_trans_rule" model="ir.ui.view">
+            <field name="name">QM Lot Num Form</field>
+            <field name="model">qm.check.degree.trans.rule</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="转移规则">
+                            <field name="rule_name" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <group name="group_left">
+                                <field name="is_certificate"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="method_trans"/>
+                            </group>
+                        </group>
+                        <field name="condition_list_ids" widget="one2many_list"
+                               context="{'trans_rule_name': rule_name}">
+                            <tree delete="false">
+                                <field name="trans_rule_type" options="{'no_create': True, 'no_open': True}"
+                                />
+                                <field name="and_or_one"/>
+                                <field name="condition_one" options="{'no_create': True, 'no_open': True}"
+                                />
+                                <field name="condition_two" options="{'no_create': True, 'no_open': True}"
+                                />
+                                <field name="condition_three" options="{'no_create': True, 'no_open': True}"
+                                />
+                                <field name="condition_four" options="{'no_create': True, 'no_open': True}"
+                                />
+                                <!--attrs="{'invisible':[('project_type','!=','quality')]}"-->
+                                <field name="approve"/>
+                                <field name="touch_qm_notify"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <!-- 定义列表视图 -->
+        <record id="view_tree_qm_trans_rule" model="ir.ui.view">
+            <field name="name">QM Lot Num Tree</field>
+            <field name="model">qm.check.degree.trans.rule</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rule_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_qm_check_degree_trans_list" model="ir.ui.view">
+            <field name="name">Qm Check Degree Trans List</field>
+            <field name="model">qm.check.degree.trans.list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="转移规则">
+                            <field name="trans_rule_name" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+
+                        <group>
+                            <field name="trans_rule_type" domain="[('trans_rule_id', '=',trans_rule_name)]"
+                                   options="{'no_create': True, 'no_open': True}"
+                            />
+                            <field name="and_or_one"/>
+                            <field name="condition_one" domain="[('trans_level_type_id', '=',trans_rule_type)]"
+                                   options="{'no_create': True, 'no_open': True}"
+                            />
+                            <field name="condition_two" domain="[('trans_level_type_id', '=',trans_rule_type)]"
+                                   options="{'no_create': True, 'no_open': True}"
+                            />
+                            <field name="condition_three" domain="[('trans_level_type_id', '=',trans_rule_type)]"
+                                   options="{'no_create': True, 'no_open': True}"
+                            />
+                            <field name="approve"/>
+                            <field name="touch_qm_notify"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
+
+
